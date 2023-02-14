@@ -19,7 +19,7 @@ const LinksWrapper = styled.div`
 `;
 
 const Link = styled.a`
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   border: 1.5px solid black;
   border-radius: 25px;
   font-weight: 700;
@@ -28,11 +28,11 @@ const Link = styled.a`
 
 const Logo = styled.div`
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
 `;
 
 const Select = styled.select`
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 700;
   padding: 0 15px;
   background-color: var(--yellow);
