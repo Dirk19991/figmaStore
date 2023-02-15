@@ -2,12 +2,302 @@
   {
     "id": 1,
     "title": "Rainbow logo tee",
-    "priceUK": "15",
-    "priceUS": "20",
+    "priceUK": 15,
+    "priceUS": 20,
     "category": "clothes",
     "imageMain": "/images/productsMain/front/rainbowLogoTee.webp",
-    "imageHover": "/images/productsMain/hover/rainbowLogoTee.webp"
+    "imageHover": "/images/productsMain/hover/rainbowLogoTee.webp",
+    "background": "/images/productsMain/background/1.webp"
   },
-  { "title": "Title 2", "content": "Content 2" },
-  { "title": "Title 3", "content": "Content 3" }
+  {
+    "id": 2,
+    "title": "Comments notebook",
+    "priceUK": 8,
+    "priceUS": 11,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/commentsNotebook.webp",
+    "imageHover": "/images/productsMain/hover/commentsNotebook.webp",
+    "background": "/images/productsMain/background/2.webp"
+  },
+  {
+    "id": 3,
+    "title": "Figma logo hat",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/logoHat.webp",
+    "imageHover": "/images/productsMain/hover/logoHat.webp",
+    "background": "/images/productsMain/background/3.webp"
+  },
+  {
+    "id": 4,
+    "title": "Multicursor pin",
+    "priceUK": 1.5,
+    "priceUS": 2,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/rainbowLogoTee.webp",
+    "imageHover": "/images/productsMain/hover/rainbowLogoTee.webp",
+    "background": "/images/productsMain/background/4.webp"
+  },
+  {
+    "id": 5,
+    "title": "Logo dimensions tee",
+    "priceUK": 18,
+    "priceUS": 23,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/logoDimensionsTee.webp",
+    "imageHover": "/images/productsMain/hover/logoDimensionsTee.webp",
+    "background": "/images/productsMain/background/5.webp"
+  },
+  {
+    "id": 6,
+    "title": "Bezier water bottle",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/bezierWaterBottle.webp",
+    "imageHover": "/images/productsMain/hover/bezierWaterBottle.webp",
+    "background": "/images/productsMain/background/6.webp"
+  },
+  {
+    "id": 7,
+    "title": "Hug contents tee",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/hugContentsTee.webp",
+    "imageHover": "/images/productsMain/hover/hugContentsTee.webp",
+    "background": "/images/productsMain/background/7.webp"
+  },
+  {
+    "id": 8,
+    "title": "Figma logo pin",
+    "priceUK": 1.5,
+    "priceUS": 2,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/figmaLogoPin.webp",
+    "imageHover": "/images/productsMain/hover/figmaLogoPin.webp",
+    "background": "/images/productsMain/background/8.webp"
+  },
+  {
+    "id": 9,
+    "title": "Elevated workflows tee",
+    "priceUK": 18,
+    "priceUS": 22,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/elevatedWorkflowsTee.webp",
+    "imageHover": "/images/productsMain/hover/elevatedWorkflowsTee.webp",
+    "background": "/images/productsMain/background/9.webp"
+  },
+  {
+    "id": 10,
+    "title": "Black arrow socks",
+    "priceUK": 8,
+    "priceUS": 10,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/blackArrowSocks.webp",
+    "imageHover": "/images/productsMain/hover/blackArrowSocks.webp",
+    "background": "/images/productsMain/background/10.webp"
+  },
+  {
+    "id": 11,
+    "title": "Figma travel tumbler",
+    "priceUK": 25,
+    "priceUS": 30,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/figmaTravelTumbler.webp",
+    "imageHover": "/images/productsMain/hover/figmaTravelTumbler.webp",
+    "background": "/images/productsMain/background/11.webp"
+  },
+  {
+    "id": 12,
+    "title": "<code/> cap",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/codeCap.webp",
+    "imageHover": "/images/productsMain/hover/codeCap.webp",
+    "background": "/images/productsMain/background/12.webp"
+  },
+  {
+    "id": 13,
+    "title": "White pen tool socks",
+    "priceUK": 8,
+    "priceUS": 10,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/whitePenToolSocks.webp",
+    "imageHover": "/images/productsMain/hover/whitePenToolSocks.webp",
+    "background": "/images/productsMain/background/1.webp"
+  },
+  {
+    "id": 14,
+    "title": "Figma hoodie",
+    "priceUK": 35,
+    "priceUS": 45,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/figmaHoodie.webp",
+    "imageHover": "/images/productsMain/hover/figmaHoodie.webp",
+    "background": "/images/productsMain/background/2.webp"
+  },
+  {
+    "id": 15,
+    "title": "Blue Figma hat",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/blueFigmaHat.webp",
+    "imageHover": "/images/productsMain/hover/blueFigmaHat.webp",
+    "background": "/images/productsMain/background/3.webp"
+  },
+  {
+    "id": 16,
+    "title": "Throw blanket",
+    "priceUK": 60,
+    "priceUS": 75,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/throwBlanket.webp",
+    "imageHover": "/images/productsMain/hover/throwBlanket.webp",
+    "background": "/images/productsMain/background/4.webp"
+  },
+  {
+    "id": 17,
+    "title": "Figma logo tee",
+    "priceUK": 14,
+    "priceUS": 19,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/figmaLogoTee.webp",
+    "imageHover": "/images/productsMain/hover/figmaLogoTee.webp",
+    "background": "/images/productsMain/background/5.webp"
+  },
+  {
+    "id": 18,
+    "title": "Smiley pin",
+    "priceUK": 1.5,
+    "priceUS": 2,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/smileyPin.webp",
+    "imageHover": "/images/productsMain/hover/smileyPin.webp",
+    "background": "/images/productsMain/background/6.webp"
+  },
+  {
+    "id": 19,
+    "title": "Detach instance tee",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/detachInstanceTee.webp",
+    "imageHover": "/images/productsMain/hover/detachInstanceTee.webp",
+    "background": "/images/productsMain/background/7.webp"
+  },
+  {
+    "id": 20,
+    "title": "Bezier logo tee",
+    "priceUK": 18,
+    "priceUS": 22,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/bezierLogoTee.webp",
+    "imageHover": "/images/productsMain/hover/bezierLogoTee.webp",
+    "background": "/images/productsMain/background/8.webp"
+  },
+  {
+    "id": 21,
+    "title": "Vector network pin",
+    "priceUK": 1.5,
+    "priceUS": 2,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/vectorNetworkPin.webp",
+    "imageHover": "/images/productsMain/hover/vectorNetworkPin.webp",
+    "background": "/images/productsMain/background/9.webp"
+  },
+  {
+    "id": 22,
+    "title": "Light grey comment socks",
+    "priceUK": 8,
+    "priceUS": 10,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/lightGreyCommentSocks.webp",
+    "imageHover": "/images/productsMain/hover/lightGreyCommentSocks.webp",
+    "background": "/images/productsMain/background/10.webp"
+  },
+  {
+    "id": 23,
+    "title": "Detach instance pin",
+    "priceUK": 1.5,
+    "priceUS": 2,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/detachInstancePin.webp",
+    "imageHover": "/images/productsMain/hover/detachInstancePin.webp",
+    "background": "/images/productsMain/background/11.webp"
+  },
+  {
+    "id": 24,
+    "title": "Meet me in the browser tee",
+    "priceUK": 18,
+    "priceUS": 22,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/meetMeInTheBrowserTee.webp",
+    "imageHover": "/images/productsMain/hover/meetMeInTheBrowserTee.webp",
+    "background": "/images/productsMain/background/12.webp"
+  },
+  {
+    "id": 25,
+    "title": "Figma wordmark tee",
+    "priceUK": 14,
+    "priceUS": 19,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/figmaWordmarkTee.webp",
+    "imageHover": "/images/productsMain/hover/figmaWordmarkTee.webp",
+    "background": "/images/productsMain/background/1.webp"
+  },
+
+  {
+    "id": 26,
+    "title": "Plugins mug",
+    "priceUK": 24,
+    "priceUS": 30,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/pluginsMug.webp",
+    "imageHover": "/images/productsMain/hover/pluginsMug.webp",
+    "background": "/images/productsMain/background/2.webp"
+  },
+  {
+    "id": 27,
+    "title": "The Figma Store Gift Card",
+    "priceUK": 25,
+    "priceUS": 30,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/theFigmaStoreGiftCard.webp",
+    "imageHover": "/images/productsMain/hover/theFigmaStoreGiftCard.webp",
+    "background": "/images/productsMain/background/3.webp"
+  },
+  {
+    "id": 28,
+    "title": "Figma sticker pack",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/figmaStickerPack.webp",
+    "imageHover": "/images/productsMain/hover/figmaStickerPack.webp",
+    "background": "/images/productsMain/background/4.webp"
+  },
+  {
+    "id": 29,
+    "title": "Pixel perfect dark mode tee",
+    "priceUK": 18,
+    "priceUS": 22,
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/pixelPerfectDarkModeTee.webp",
+    "imageHover": "/images/productsMain/hover/pixelPerfectDarkModeTee.webp",
+    "background": "/images/productsMain/background/5.webp"
+  },
+  {
+    "id": 30,
+    "title": "Cursor tote bag",
+    "priceUK": 15,
+    "priceUS": 20,
+    "category": "accessories",
+    "imageMain": "/images/productsMain/front/cursorToteBag.webp",
+    "imageHover": "/images/productsMain/hover/cursorToteBag.webp",
+    "background": "/images/productsMain/background/6.webp"
+  }
 ]
