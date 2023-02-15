@@ -60,10 +60,8 @@ function Header() {
         </LinksWrapper>
         <Logo>THE FIGMA STORE</Logo>
         <LinksWrapper>
-          <Select>
-            <option selected value='UNITED STATES'>
-              UNITED STATES
-            </option>
+          <Select defaultValue={'UNITED STATES'}>
+            <option value='UNITED STATES'>UNITED STATES</option>
             <option value='UNITED KINGDOM'>UNITED KINGDOM</option>
           </Select>
           <Link>CART</Link>

@@ -4,7 +4,7 @@ function Dog() {
       <defs>
         <pattern id='3' patternUnits='objectBoundingBox' width='1' height='1'>
           <image
-            href='/images/Dog.webp'
+            href='/images/swiper/dog.webp'
             x='0'
             y='0'
             width='100%'
@@ -15,7 +15,7 @@ function Dog() {
       </defs>
       <rect
         stroke='black'
-        stroke-width='7'
+        strokeWidth='7'
         x='2'
         y='2'
         width='646'

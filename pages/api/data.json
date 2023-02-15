@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Rainbow logo tee",
+    "priceUK": "15",
+    "priceUS": "20",
+    "category": "clothes",
+    "imageMain": "/images/productsMain/front/rainbowLogoTee.webp",
+    "imageHover": "/images/productsMain/hover/rainbowLogoTee.webp"
+  },
+  { "title": "Title 2", "content": "Content 2" },
+  { "title": "Title 3", "content": "Content 3" }
+]

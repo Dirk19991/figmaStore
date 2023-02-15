@@ -4,7 +4,7 @@ function Bottle() {
       <defs>
         <pattern id='2' patternUnits='objectBoundingBox' width='1' height='1'>
           <image
-            href='/images/Bottle.webp'
+            href='/images/swiper/bottle.webp'
             x='0'
             y='0'
             width='100%'
@@ -17,7 +17,7 @@ function Bottle() {
         d='M648 325C648 503.388 503.388 648 325 648C146.612 648 2 503.388 2 325C2 146.612 146.612 2 325 2C503.388 2 648 146.612 648 325Z'
         fill='url(#2)'
         stroke='black'
-        stroke-width='7'
+        strokeWidth='7'
       ></path>
     </svg>
   );

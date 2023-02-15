@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import AsianMan from './images/AsianMan';
-import Dog from './images/Dog';
-import GirlWithGlasses from './images/GirlWithGlasses';
-import Moto from './images/Moto';
-import Bottle from './images/Bottle';
+import AsianMan from './imageComponents/AsianMan';
+import Dog from './imageComponents/Dog';
+import GirlWithGlasses from './imageComponents/GirlWithGlasses';
+import Moto from './imageComponents/Moto';
+import Bottle from './imageComponents/Bottle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import GirlGreenHair from './images/GirlGreenHair';
-import TShirt from './images/TShirt';
-import Socks from './images/Socks';
+import GirlGreenHair from './imageComponents/GirlGreenHair';
+import TShirt from './imageComponents/TShirt';
+import Socks from './imageComponents/Socks';
+import { useState } from 'react';
 
 const Wrapper = styled.div`
   height: auto;
@@ -27,57 +28,67 @@ const SwiperWrapper = styled.div`
 `;
 
 function SwiperComponent() {
+  const [source, setSource] = useState(null);
+
+  async function fetcher() {
+    const data = await fetch('/api/all');
+    const result = await data.json();
+    setSource(result.data[0].imageMain);
+  }
+
+  fetcher();
+
   return (
-    <SwiperWrapper>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <Wrapper>
-            <Moto />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <Dog />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <GirlWithGlasses />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <AsianMan />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <Bottle />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <GirlGreenHair />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <TShirt />
-          </Wrapper>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Wrapper>
-            <Socks />
-          </Wrapper>
-        </SwiperSlide>
-        ...
-      </Swiper>
-    </SwiperWrapper>
+    <>
+      <SwiperWrapper>
+        <Swiper spaceBetween={50} slidesPerView={3}>
+          <SwiperSlide>
+            <Wrapper>
+              <Moto />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <Dog />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <GirlWithGlasses />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <AsianMan />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <Bottle />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <GirlGreenHair />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <TShirt />
+            </Wrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Wrapper>
+              <Socks />
+            </Wrapper>
+          </SwiperSlide>
+          ...
+        </Swiper>
+      </SwiperWrapper>
+      <div style={{ width: '400px', height: 'auto' }}>
+        <img style={{ width: '100%', height: 'auto' }} src={source} alt='' />
+      </div>
+    </>
   );
 }
 export default SwiperComponent;
