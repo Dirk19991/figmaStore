@@ -28,16 +28,6 @@ const SwiperWrapper = styled.div`
 `;
 
 function SwiperComponent() {
-  const [source, setSource] = useState(null);
-
-  async function fetcher() {
-    const data = await fetch('/api/all');
-    const result = await data.json();
-    setSource(result.data[0].imageMain);
-  }
-
-  fetcher();
-
   return (
     <>
       <SwiperWrapper>
@@ -85,9 +75,6 @@ function SwiperComponent() {
           ...
         </Swiper>
       </SwiperWrapper>
-      <div style={{ width: '400px', height: 'auto' }}>
-        <img style={{ width: '100%', height: 'auto' }} src={source} alt='' />
-      </div>
     </>
   );
 }
