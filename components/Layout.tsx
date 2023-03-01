@@ -3,13 +3,12 @@ import Header from './header/Header';
 
 interface LayoutProps {
   children: any;
-  setCountry: Dispatch<SetStateAction<string>>;
 }
 
-export default function Layout({ children, setCountry }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Header setCountry={setCountry} />
+      <Header />
       <main>{children}</main>
     </>
   );
