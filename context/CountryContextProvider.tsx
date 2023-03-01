@@ -8,7 +8,7 @@ import {
 
 interface ICountryContext {
   country: string;
-  setCountry: Dispatch<SetStateAction<string>>;
+  setCountry: (country: string) => void;
 }
 
 export const CountryContext = createContext<ICountryContext>({
