@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
 const LinksWrapper = styled.div`
   display: flex;
   gap: 5px;
-  padding: 0 20px;
+  padding: 0 19px;
 `;
 
 const StyledLink = styled(Link)`

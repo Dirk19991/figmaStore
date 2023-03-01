@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import CartContextProvider from '../context/CartContextProvider';
 import CountryContextProvider from '../context/CountryContextProvider';
 import '../components/global.css';
+
 const theme: DefaultTheme = {
   colors: {
     primary: '#111',
