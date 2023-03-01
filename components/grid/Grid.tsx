@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import GridHeader from './header/GridHeader';
 import Link from 'next/link';
 import { useContext } from 'react';
-import { CountryContext } from '../../pages/_app';
+import { useCountryContext } from '../../context/CountryContextProvider';
 
 interface GridProps {
   data: Product[];
@@ -99,7 +99,7 @@ const Price = styled.div`
 `;
 
 function Grid({ data }: GridProps) {
-  const country = useContext(CountryContext);
+  const { country, setCountry } = useCountryContext();
 
   return (
     <GridWrapper>

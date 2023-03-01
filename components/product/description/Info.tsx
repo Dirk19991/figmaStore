@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { CartContext, CountryContext } from '../../../pages/_app';
+import { useCartContext } from '../../../context/CartContextProvider';
+import { useCountryContext } from '../../../context/CountryContextProvider';
 import Buttons from './buttons/Buttons';
 
 interface InfoProps {
@@ -62,9 +63,9 @@ const Subtitle = styled.p`
 `;
 
 function Info({ data }: InfoProps) {
-  const country = useContext(CountryContext);
-  const cart = useContext(CartContext);
-  console.log(cart);
+  const { country, setCountry } = useCountryContext();
+  const cart = useCartContext();
+  console.log(country);
   const signs = {
     'UNITED STATES': '$',
     'UNITED KINGDOM': '£',

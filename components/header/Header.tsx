@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import { Dispatch, SetStateAction, useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext, CountryContext } from '../../pages/_app';
-
-interface HeaderProps {
-  setCountry: Dispatch<SetStateAction<string>>;
-}
+import { useCartContext } from '../../context/CartContextProvider';
+import { useCountryContext } from '../../context/CountryContextProvider';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -62,10 +59,11 @@ const Select = styled.select`
   }
 `;
 
-function Header({ setCountry }: HeaderProps) {
-  const country = useContext(CountryContext);
-  const cart = useContext(CartContext);
+function Header() {
+  const { country, setCountry } = useCountryContext();
+  const cart = useCartContext();
   const items = cart.items.reduce((acc, elem) => (acc += elem.quantity), 0);
+  console.log(country, setCountry);
 
   return (
     <Wrapper>
