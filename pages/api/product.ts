@@ -16,6 +16,5 @@ export async function getProductData(product: string): Promise<Product> {
         elem.title.toLowerCase() === formattedName.toLowerCase()
     )[0] ?? data[0];
 
-  console.log(filteredItem);
   return filteredItem;
 }

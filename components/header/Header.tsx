@@ -1,4 +1,11 @@
+import Link from 'next/link';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import styled from 'styled-components';
+import { CartContext, CountryContext } from '../../pages/_app';
+
+interface HeaderProps {
+  setCountry: Dispatch<SetStateAction<string>>;
+}
 
 const Wrapper = styled.div`
   width: 100%;
@@ -6,24 +13,29 @@ const Wrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  padding: 10px 50px;
   margin: 0 auto;
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const LinksWrapper = styled.div`
   display: flex;
   gap: 5px;
+  padding: 0 20px;
 `;
 
-const Link = styled.a`
-  font-size: 1.2rem;
+const StyledLink = styled(Link)`
+  font-size: 18px;
   border: 1.5px solid black;
   border-radius: 25px;
   font-weight: 700;
   padding: 8px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
 
 const Logo = styled.div`
@@ -32,7 +44,7 @@ const Logo = styled.div`
 `;
 
 const Select = styled.select`
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 700;
   padding: 0 15px;
   background-color: var(--yellow);
@@ -42,7 +54,7 @@ const Select = styled.select`
   cursor: pointer;
 
   > option {
-    font-size: 0.8rem;
+    font-size: 18px;
     font-weight: 700;
     background-color: var(--black);
     color: white;
@@ -50,21 +62,28 @@ const Select = styled.select`
   }
 `;
 
-function Header() {
+function Header({ setCountry }: HeaderProps) {
+  const country = useContext(CountryContext);
+  const cart = useContext(CartContext);
+  const items = cart.items.reduce((acc, elem) => (acc += elem.quantity), 0);
+
   return (
     <Wrapper>
       <StyledHeader>
         <LinksWrapper>
-          <Link>SHOP</Link>
-          <Link>ABOUT</Link>
+          <StyledLink href='/'>SHOP</StyledLink>
+          <StyledLink href='/about'>ABOUT</StyledLink>
         </LinksWrapper>
         <Logo>THE FIGMA STORE</Logo>
         <LinksWrapper>
-          <Select defaultValue={'UNITED STATES'}>
+          <Select
+            onChange={(e) => setCountry(e.target.value)}
+            defaultValue={country}
+          >
             <option value='UNITED STATES'>UNITED STATES</option>
             <option value='UNITED KINGDOM'>UNITED KINGDOM</option>
           </Select>
-          <Link>CART</Link>
+          <StyledLink href='/cart'>CART {items}</StyledLink>
         </LinksWrapper>
       </StyledHeader>
     </Wrapper>

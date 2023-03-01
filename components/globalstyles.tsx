@@ -39,10 +39,16 @@ const GlobalStyle = createGlobalStyle`
     all: unset
   }
 
+  button {
+    all: unset
+  }
+
   * {
     box-sizing: border-box;
    
   }
+
+  font-display: optional
 `;
 
 export default GlobalStyle;

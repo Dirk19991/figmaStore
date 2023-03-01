@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import GridHeader from './header/GridHeader';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { CountryContext } from '../../pages/_app';
 
 interface GridProps {
   data: Product[];
@@ -32,11 +34,18 @@ interface GridCellProps {
   imageBackground: string;
 }
 
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
 const GridCell = styled.div<GridCellProps>`
   @keyframes appear {
     0% {
-      opacity: 0.4;
+      opacity: 0.1;
     }
+
     100% {
       opacity: 1;
     }
@@ -44,13 +53,13 @@ const GridCell = styled.div<GridCellProps>`
 
   @keyframes appear2 {
     0% {
-      opacity: 0.4;
+      opacity: 0.1;
     }
     100% {
       opacity: 1;
     }
   }
-
+  position: relative;
   width: 250px;
   height: 350px;
   min-height: 200px;
@@ -73,13 +82,31 @@ const GridCell = styled.div<GridCellProps>`
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+`;
+
+const Title = styled.div`
+  font-size: 22px;
+  font-weight: 700;
+`;
+
+const Price = styled.div`
+  font-size: 22px;
+  font-weight: 700;
+`;
+
 function Grid({ data }: GridProps) {
+  const country = useContext(CountryContext);
+
   return (
     <GridWrapper>
       <GridHeader />
       <GridContent>
         {data.map((elem) => (
-          <Link
+          <StyledLink
             href={`/products/${elem.title.toLowerCase().split(' ').join('-')}`}
             key={elem.title}
           >
@@ -88,7 +115,15 @@ function Grid({ data }: GridProps) {
               imageHover={elem.imageHover}
               image={elem.imageMain}
             ></GridCell>
-          </Link>
+            <Wrapper>
+              <Title>{elem.title}</Title>
+              <Price>
+                {country === 'UNITED STATES'
+                  ? `$${elem.priceUS}`
+                  : `£${elem.priceUK}`}
+              </Price>
+            </Wrapper>
+          </StyledLink>
         ))}
       </GridContent>
     </GridWrapper>

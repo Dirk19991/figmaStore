@@ -1,9 +1,15 @@
+import { Dispatch, SetStateAction } from 'react';
 import Header from './header/Header';
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: any;
+  setCountry: Dispatch<SetStateAction<string>>;
+}
+
+export default function Layout({ children, setCountry }: LayoutProps) {
   return (
     <>
-      <Header />
+      <Header setCountry={setCountry} />
       <main>{children}</main>
     </>
   );
