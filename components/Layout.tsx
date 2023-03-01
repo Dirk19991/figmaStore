@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import Footer from './footer/Footer';
 import Header from './header/Header';
 
 interface LayoutProps {
@@ -10,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
     <>
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

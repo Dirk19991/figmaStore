@@ -14,6 +14,7 @@ const GridWrapper = styled.div`
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;

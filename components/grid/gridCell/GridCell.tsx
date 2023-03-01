@@ -2,30 +2,13 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
 import background from '../../../public/images/productsMain/background/1.webp';
+import { motion } from 'framer-motion';
 
 interface GridCellProps {
   elem: Product;
 }
 
 const StyledGridCell = styled.div`
-  @keyframes appear {
-    0% {
-      opacity: 0.1;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes appear2 {
-    0% {
-      opacity: 0.1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   position: relative;
   width: 250px;
   height: 350px;
@@ -40,18 +23,13 @@ const StyledGridCell = styled.div`
   background-size: cover;
   overflow: hidden;
   cursor: pointer;
-  animation: appear2 1s;
-
-  &:hover {
-    animation: appear 1s;
-  }
 `;
 
 interface ContainerProps {
   display: boolean;
 }
 
-const HoverContainer = styled.div<ContainerProps>`
+const HoverContainer = styled(motion.div)<ContainerProps>`
   width: 250px;
   height: 350px;
   min-height: 200px;
@@ -66,7 +44,7 @@ const HoverContainer = styled.div<ContainerProps>`
   }
 `;
 
-const MainContainer = styled.div<ContainerProps>`
+const MainContainer = styled(motion.div)<ContainerProps>`
   display: ${(props) => (props.display ? 'none' : '')};
 `;
 
@@ -79,7 +57,11 @@ function GridCell({ elem }: GridCellProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <>
-        <HoverContainer display={hovered}>
+        <HoverContainer
+          animate={{ opacity: hovered ? 1 : 0.5 }}
+          transition={{ duration: 0.5 }}
+          display={hovered}
+        >
           <Image
             width={250}
             height={350}
@@ -95,7 +77,11 @@ function GridCell({ elem }: GridCellProps) {
             priority
           ></Image>
         </HoverContainer>
-        <MainContainer display={hovered}>
+        <MainContainer
+          animate={{ opacity: hovered ? 0.5 : 1 }}
+          transition={{ duration: 0.5 }}
+          display={hovered}
+        >
           <Image
             width={250}
             height={350}
