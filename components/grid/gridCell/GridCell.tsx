@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
+import background from '../../../public/images/productsMain/background/1.webp';
 
 interface GridCellProps {
   elem: Product;
@@ -41,16 +42,32 @@ const StyledGridCell = styled.div`
   cursor: pointer;
   animation: appear2 1s;
 
+  &:hover {
+    animation: appear 1s;
+  }
+`;
+
+interface ContainerProps {
+  display: boolean;
+}
+
+const HoverContainer = styled.div<ContainerProps>`
+  width: 250px;
+  height: 350px;
+  min-height: 200px;
+  position: relative;
+  display: ${(props) => (props.display ? '' : 'none')};
+
   > img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+`;
 
-  &:hover {
-    animation: appear 1s;
-  }
+const MainContainer = styled.div<ContainerProps>`
+  display: ${(props) => (props.display ? 'none' : '')};
 `;
 
 function GridCell({ elem }: GridCellProps) {
@@ -61,29 +78,32 @@ function GridCell({ elem }: GridCellProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {hovered ? (
-        <>
+      <>
+        <HoverContainer display={hovered}>
           <Image
             width={250}
             height={350}
             alt={elem.title}
             src={elem.background}
+            priority
           ></Image>
           <Image
             width={250}
             height={350}
             alt={elem.title}
             src={elem.imageHover}
+            priority
           ></Image>
-        </>
-      ) : (
-        <Image
-          width={250}
-          height={350}
-          alt={elem.title}
-          src={elem.imageMain}
-        ></Image>
-      )}
+        </HoverContainer>
+        <MainContainer display={hovered}>
+          <Image
+            width={250}
+            height={350}
+            alt={elem.title}
+            src={elem.imageMain}
+          ></Image>
+        </MainContainer>
+      </>
     </StyledGridCell>
   );
 }

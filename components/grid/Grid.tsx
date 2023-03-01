@@ -3,7 +3,7 @@ import GridHeader from './header/GridHeader';
 import Link from 'next/link';
 
 import { useCountryContext } from '../../context/CountryContextProvider';
-import Image from 'next/image';
+
 import GridCell from './gridCell/GridCell';
 
 interface GridProps {

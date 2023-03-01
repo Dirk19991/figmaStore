@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import Whyte from '../public/assets/fonts/WhyteRegular.woff2';
 
 const GlobalStyle = createGlobalStyle`
   html,
