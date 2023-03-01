@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import GridHeader from './header/GridHeader';
 import Link from 'next/link';
-import { useContext } from 'react';
+
 import { useCountryContext } from '../../context/CountryContextProvider';
+import Image from 'next/image';
+import GridCell from './gridCell/GridCell';
 
 interface GridProps {
   data: Product[];
@@ -28,58 +30,10 @@ const GridContent = styled.div`
   gap: 50px;
 `;
 
-interface GridCellProps {
-  image: string;
-  imageHover: string;
-  imageBackground: string;
-}
-
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   gap: 15px;
-`;
-
-const GridCell = styled.div<GridCellProps>`
-  @keyframes appear {
-    0% {
-      opacity: 0.1;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes appear2 {
-    0% {
-      opacity: 0.1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  position: relative;
-  width: 250px;
-  height: 350px;
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 40px;
-  background-image: url(${(props) => props.image});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  cursor: pointer;
-  animation: appear2 1s;
-
-  &:hover {
-    background-image: url(${(props) => props.imageHover}),
-      url(${(props) => props.imageBackground});
-    animation: appear 1s;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -110,11 +64,7 @@ function Grid({ data }: GridProps) {
             href={`/products/${elem.title.toLowerCase().split(' ').join('-')}`}
             key={elem.title}
           >
-            <GridCell
-              imageBackground={elem.background}
-              imageHover={elem.imageHover}
-              image={elem.imageMain}
-            ></GridCell>
+            <GridCell elem={elem}></GridCell>
             <Wrapper>
               <Title>{elem.title}</Title>
               <Price>
