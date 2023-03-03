@@ -9,7 +9,7 @@ import 'swiper/css';
 import GirlGreenHair from './imageComponents/GirlGreenHair';
 import TShirt from './imageComponents/TShirt';
 import Socks from './imageComponents/Socks';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 const Wrapper = styled.div`
   height: auto;
@@ -28,6 +28,8 @@ const SwiperWrapper = styled.div`
 `;
 
 function SwiperComponent() {
+
+
   return (
     <>
       <SwiperWrapper>

@@ -4,6 +4,8 @@ import SwiperComponent from '../components/swiper/Swiper';
 import { getData } from './api/all';
 
 export default function Home({ data }) {
+
+ 
   return (
     <>
       <SwiperComponent />
