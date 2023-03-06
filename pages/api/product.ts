@@ -1,9 +1,13 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import all from './data.json';
 const data = all as Product[];
 
-export default async function productHandler(req, res) {
+export default async function productHandler(
+  req: NextApiRequest,
+  res: NextApiResponse<{ response: Product }>
+) {
   const { query } = req.query;
-  const response = await getProductData(query);
+  const response = await getProductData(query as string);
   res.status(200).json({ response });
 }
 

@@ -5,6 +5,8 @@ const StyledHeader = styled.h2`
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 120px;
+  margin-bottom: 120px;
 `;
 
 function GridHeader() {

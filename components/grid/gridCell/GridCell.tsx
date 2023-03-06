@@ -26,7 +26,7 @@ const StyledGridCell = styled.div`
 `;
 
 interface ContainerProps {
-  display: boolean;
+  display: number;
 }
 
 const HoverContainer = styled(motion.div)<ContainerProps>`
@@ -60,7 +60,7 @@ function GridCell({ elem }: GridCellProps) {
         <HoverContainer
           animate={{ opacity: hovered ? 1 : 0.5 }}
           transition={{ duration: 0.5 }}
-          display={hovered}
+          display={hovered ? 1 : 0}
         >
           <Image
             width={250}
@@ -80,7 +80,7 @@ function GridCell({ elem }: GridCellProps) {
         <MainContainer
           animate={{ opacity: hovered ? 0.5 : 1 }}
           transition={{ duration: 0.5 }}
-          display={hovered}
+          display={hovered ? 1 : 0}
         >
           <Image
             width={250}

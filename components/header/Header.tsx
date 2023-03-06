@@ -1,8 +1,11 @@
 import Link from 'next/link';
-import { Dispatch, SetStateAction, useContext } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction, useContext } from 'react';
 import styled from 'styled-components';
 import { useCartContext } from '../../context/CartContextProvider';
-import { useCountryContext } from '../../context/CountryContextProvider';
+import {
+  AvailableCountries,
+  useCountryContext,
+} from '../../context/CountryContextProvider';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -62,8 +65,8 @@ const Select = styled.select`
 function Header() {
   const { country, setCountry } = useCountryContext();
   const cart = useCartContext();
-  const items = cart.items.reduce((acc, elem) => (acc += elem.quantity), 0);
-  console.log(country, setCountry);
+  let currentItems = 0;
+  cart.items.forEach((elem: Item) => (currentItems += elem.quantity));
 
   return (
     <Wrapper>
@@ -75,13 +78,13 @@ function Header() {
         <Logo>THE FIGMA STORE</Logo>
         <LinksWrapper>
           <Select
-            onChange={(e) => setCountry(e.target.value)}
+            onChange={(e) => setCountry(e.target.value as AvailableCountries)}
             defaultValue={country}
           >
             <option value='UNITED STATES'>UNITED STATES</option>
             <option value='UNITED KINGDOM'>UNITED KINGDOM</option>
           </Select>
-          <StyledLink href='/cart'>CART {items}</StyledLink>
+          <StyledLink href='/cart'>CART {currentItems}</StyledLink>
         </LinksWrapper>
       </StyledHeader>
     </Wrapper>

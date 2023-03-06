@@ -28,8 +28,6 @@ const SwiperWrapper = styled.div`
 `;
 
 function SwiperComponent() {
-
-
   return (
     <>
       <SwiperWrapper>

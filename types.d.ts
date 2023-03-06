@@ -21,3 +21,8 @@ interface Product {
 interface AllProducts {
   data: Product[];
 }
+
+interface Item {
+  id: number;
+  quantity: number;
+}

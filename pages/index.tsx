@@ -3,9 +3,7 @@ import Header from '../components/header/Header';
 import SwiperComponent from '../components/swiper/Swiper';
 import { getData } from './api/all';
 
-export default function Home({ data }) {
-
- 
+export default function Home({ data }: AllProducts) {
   return (
     <>
       <SwiperComponent />

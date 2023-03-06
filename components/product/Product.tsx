@@ -41,7 +41,9 @@ const Image = styled.div<ImageProps>`
 `;
 
 function Product({ data }: ProductProps) {
-  const [chosenImage, setChosenImage] = useState(data.productInfo.image1);
+  const [chosenImage, setChosenImage] = useState<string>(
+    data.productInfo.image1
+  );
 
   return (
     <ProductWrapper>
@@ -59,20 +61,20 @@ function Product({ data }: ProductProps) {
           <img src={data.productInfo.image2} alt='image2' />
         </Image>
         <Image
-          source={data.productInfo.image3}
-          onClick={() => setChosenImage(data.productInfo.image3)}
+          source={data.productInfo.image3 ?? ''}
+          onClick={() => setChosenImage(data.productInfo.image3 ?? '')}
         >
           <img src={data.productInfo.image3} alt='image3' />
         </Image>
         <Image
-          source={data.productInfo.image4}
-          onClick={() => setChosenImage(data.productInfo.image4)}
+          source={data.productInfo.image4 ?? ''}
+          onClick={() => setChosenImage(data.productInfo.image4 ?? '')}
         >
           <img src={data.productInfo.image4} alt='image4' />
         </Image>
         <Image
-          source={data.productInfo.image5}
-          onClick={() => setChosenImage(data.productInfo.image5)}
+          source={data.productInfo.image5 ?? ''}
+          onClick={() => setChosenImage(data.productInfo.image5 ?? '')}
         >
           <img src={data.productInfo.image5} alt='image5' />
         </Image>

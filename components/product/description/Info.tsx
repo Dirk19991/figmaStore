@@ -65,7 +65,7 @@ const Subtitle = styled.p`
 function Info({ data }: InfoProps) {
   const { country, setCountry } = useCountryContext();
   const cart = useCartContext();
-  console.log(country);
+
   const signs = {
     'UNITED STATES': '$',
     'UNITED KINGDOM': '£',

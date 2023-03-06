@@ -3,7 +3,11 @@ import Product from '../../components/product/Product';
 import { getData } from '../api/all';
 import { getProductData } from '../api/product';
 
-const ProductPage = ({ data }) => {
+interface ProductParams {
+  params: { productName: string };
+}
+
+const ProductPage = ({ data }: { data: Product }) => {
   return <Product data={data} />;
 };
 
@@ -16,7 +20,7 @@ export async function getStaticPaths() {
   return { paths: paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: ProductParams) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
 

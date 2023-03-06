@@ -1,5 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import styled from 'styled-components';
+import RunningLine from './runningLine/RunningLine';
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -71,6 +73,7 @@ const SocialLinks = styled.div`
   display: flex;
   font-size: 30px;
   gap: 30px;
+  flex-wrap: wrap;
 
   > div {
     &:hover {
@@ -79,52 +82,62 @@ const SocialLinks = styled.div`
   }
 `;
 
-const RunningLineWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 10000px;
-  background-color: var(--green);
-  font-size: 30px;
-  height: 30px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-`;
-
-const RunningLine = styled(motion.div)`
-  position: absolute;
-  bottom: 5px;
-  display: flex;
-  gap: 10px;
-
-  > div {
-    height: 30px;
-
-    > img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-`;
-
 function Footer() {
+  const redCircleRef = useRef(null);
+  const redCircleInView = useInView(redCircleRef);
+
+  const sloganRef = useRef(null);
+  const sloganInView = useInView(sloganRef);
+
+  const contactLinksRef = useRef(null);
+  const contactLinksInView = useInView(contactLinksRef);
+
+  const socialLinksRef = useRef(null);
+  const socialLinksInView = useInView(socialLinksRef);
+
   return (
     <StyledFooter>
       <FooterWrapper>
-        <RedCircle>
+        <RedCircle
+          ref={redCircleRef}
+          style={{
+            opacity: redCircleInView ? 1 : 0,
+            transition: 'all 0.5s',
+          }}
+        >
           <div>THE</div>
           <div>FIGMA</div>
           <div>STORE</div>
         </RedCircle>
         <Info>
           <InfoUpWrapper>
-            <Slogan>OBJECTS THAT INSPIRE.</Slogan>
-            <ContactLinks>
+            <Slogan
+              ref={sloganRef}
+              style={{
+                opacity: sloganInView ? 1 : 0,
+                transition: 'all 0.5s 0.3s',
+              }}
+            >
+              OBJECTS THAT INSPIRE.
+            </Slogan>
+            <ContactLinks
+              ref={contactLinksRef}
+              style={{
+                opacity: contactLinksInView ? 1 : 0,
+                transition: 'all 0.5s 0.6s',
+              }}
+            >
               <div>Privacy & Terms</div>
               <div>Contact Us</div>
             </ContactLinks>
           </InfoUpWrapper>
-          <SocialLinks>
+          <SocialLinks
+            ref={socialLinksRef}
+            style={{
+              opacity: socialLinksInView ? 1 : 0,
+              transition: 'all 0.5s 0.9s',
+            }}
+          >
             <div>FIGMA</div>
             <div>TWITTER</div>
             <div>INSTAGRAM</div>
@@ -132,134 +145,7 @@ function Footer() {
           </SocialLinks>
         </Info>
       </FooterWrapper>
-      <RunningLineWrapper>
-        <RunningLine
-          initial={{ x: 1900 }}
-          animate={{ x: -2000 }}
-          transition={{ ease: 'linear', duration: 30, repeat: Infinity }}
-        >
-          FOR{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          OUR{' '}
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />
-          </div>{' '}
-          TIME{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          ON{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />
-          </div>{' '}
-          FIGMA'S{' '}
-          <div>
-            <img src='./icons/snowflake.svg' alt='snowflake' />
-          </div>{' '}
-          MARVELOUSLY{' '}
-          <div>
-            <img src='./icons/zigzag.svg' alt='zigzag' />
-          </div>{' '}
-          CONSIDERED{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          COLLECTION{' '}
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />
-          </div>{' '}
-          OF{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          OBJECTS{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />
-          </div>{' '}
-          FOR{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          OUR{' '}
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />{' '}
-          </div>
-          TIME{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          ON{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />{' '}
-          </div>{' '}
-          FIGMA'S{' '}
-          <div>
-            <img src='./icons/snowflake.svg' alt='snowflake' />
-          </div>{' '}
-          MARVELOUSLY{' '}
-          <div>
-            <img src='./icons/zigzag.svg' alt='zigzag' />
-          </div>{' '}
-          CONSIDERED{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          COLLECTION{' '}
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />
-          </div>{' '}
-          OF{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          OBJECTS{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />
-          </div>{' '}
-          FOR{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          OUR
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />{' '}
-          </div>
-          TIME{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          ON{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />
-          </div>{' '}
-          FIGMA'S{' '}
-          <div>
-            <img src='./icons/snowflake.svg' alt='snowflake' />
-          </div>{' '}
-          MARVELOUSLY{' '}
-          <div>
-            <img src='./icons/zigzag.svg' alt='zigzag' />
-          </div>{' '}
-          CONSIDERED{' '}
-          <div>
-            <img src='./icons/comet.svg' alt='comet' />
-          </div>{' '}
-          COLLECTION{' '}
-          <div>
-            <img src='./icons/hourglass.svg' alt='hourglass' />
-          </div>{' '}
-          OF{' '}
-          <div>
-            <img src='./icons/snake.svg' alt='snake' />
-          </div>{' '}
-          OBJECTS{' '}
-          <div>
-            <img src='./icons/sun.svg' alt='sun' />
-          </div>
-        </RunningLine>
-      </RunningLineWrapper>
+      <RunningLine />
     </StyledFooter>
   );
 }
