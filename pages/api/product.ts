@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import clientPromise from '../../lib/mongodb';
 import all from './data.json';
 const data = all as Product[];
 
@@ -13,6 +14,14 @@ export default async function productHandler(
 
 export async function getProductData(product: string): Promise<Product> {
   const formattedName = product.replaceAll('-', ' ');
+  const regex = new RegExp(['^', formattedName, '$'].join(''), 'i');
+
+  const client = await clientPromise;
+  const db = client.db('figmaStore');
+  const response = await db
+    .collection('products')
+    .find<Product>({ title: regex })
+    .toArray();
 
   let filteredItem =
     data.filter(
@@ -20,5 +29,5 @@ export async function getProductData(product: string): Promise<Product> {
         elem.title.toLowerCase() === formattedName.toLowerCase()
     )[0] ?? data[0];
 
-  return filteredItem;
+  return response[0];
 }

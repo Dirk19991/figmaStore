@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "store/slices/allProductsSlice.оs"
+    "store/slices/allProductsSlice.оs",
+    "lib/mongodb.ts"
   ],
   "exclude": ["node_modules"]
 }

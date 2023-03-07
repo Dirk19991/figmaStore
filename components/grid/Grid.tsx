@@ -53,14 +53,15 @@ const Price = styled.div`
   font-weight: 700;
 `;
 
-function Grid({ data }: GridProps) {
+function Grid({ data }: { data: string }) {
   const { country, setCountry } = useCountryContext();
+  const parsedData = JSON.parse(data) as Product[];
 
   return (
     <GridWrapper>
       <GridHeader />
       <GridContent>
-        {data.map((elem) => (
+        {parsedData.map((elem) => (
           <StyledLink
             href={`/products/${elem.title.toLowerCase().split(' ').join('-')}`}
             key={elem.title}

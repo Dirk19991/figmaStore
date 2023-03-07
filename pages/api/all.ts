@@ -1,5 +1,6 @@
-import data from './data.json';
+import Product from '../../models/product';
 import { NextApiRequest, NextApiResponse } from 'next';
+import clientPromise from '../../lib/mongodb';
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,5 +11,9 @@ export default async function handler(
 }
 
 export async function getData() {
-  return data;
+  const client = await clientPromise;
+  const db = client.db('figmaStore');
+
+  const response = await db.collection('products').find({}).toArray();
+  return response;
 }

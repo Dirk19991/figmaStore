@@ -40,47 +40,49 @@ const Image = styled.div<ImageProps>`
   }
 `;
 
-function Product({ data }: ProductProps) {
+function Product({ data }: { data: string }) {
+  const parsedData = JSON.parse(data);
+
   const [chosenImage, setChosenImage] = useState<string>(
-    data.productInfo.image1
+    parsedData.productInfo.image1
   );
 
   return (
     <ProductWrapper>
       <ImageCarousel>
         <Image
-          source={data.productInfo.image1}
-          onClick={() => setChosenImage(data.productInfo.image1)}
+          source={parsedData.productInfo.image1}
+          onClick={() => setChosenImage(parsedData.productInfo.image1)}
         >
-          <img src={data.productInfo.image1} alt='image1' />
+          <img src={parsedData.productInfo.image1} alt='image1' />
         </Image>
         <Image
-          source={data.productInfo.image2}
-          onClick={() => setChosenImage(data.productInfo.image2)}
+          source={parsedData.productInfo.image2}
+          onClick={() => setChosenImage(parsedData.productInfo.image2)}
         >
-          <img src={data.productInfo.image2} alt='image2' />
+          <img src={parsedData.productInfo.image2} alt='image2' />
         </Image>
         <Image
-          source={data.productInfo.image3 ?? ''}
-          onClick={() => setChosenImage(data.productInfo.image3 ?? '')}
+          source={parsedData.productInfo.image3 ?? ''}
+          onClick={() => setChosenImage(parsedData.productInfo.image3 ?? '')}
         >
-          <img src={data.productInfo.image3} alt='image3' />
+          <img src={parsedData.productInfo.image3} alt='image3' />
         </Image>
         <Image
-          source={data.productInfo.image4 ?? ''}
-          onClick={() => setChosenImage(data.productInfo.image4 ?? '')}
+          source={parsedData.productInfo.image4 ?? ''}
+          onClick={() => setChosenImage(parsedData.productInfo.image4 ?? '')}
         >
-          <img src={data.productInfo.image4} alt='image4' />
+          <img src={parsedData.productInfo.image4} alt='image4' />
         </Image>
         <Image
-          source={data.productInfo.image5 ?? ''}
-          onClick={() => setChosenImage(data.productInfo.image5 ?? '')}
+          source={parsedData.productInfo.image5 ?? ''}
+          onClick={() => setChosenImage(parsedData.productInfo.image5 ?? '')}
         >
-          <img src={data.productInfo.image5} alt='image5' />
+          <img src={parsedData.productInfo.image5} alt='image5' />
         </Image>
       </ImageCarousel>
       <MainImage chosenImage={chosenImage}></MainImage>
-      <Info data={data}></Info>
+      <Info data={parsedData}></Info>
     </ProductWrapper>
   );
 }
