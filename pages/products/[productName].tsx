@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import Product from '../../components/product/Product';
 import { getData } from '../api/all';
 import { getProductData } from '../api/product';
-import ProductSchema from '../../models/product';
 
 interface ProductParams {
   params: { productName: string };
