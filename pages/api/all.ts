@@ -1,4 +1,3 @@
-import Product from '../../models/product';
 import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '../../lib/mongodb';
 
