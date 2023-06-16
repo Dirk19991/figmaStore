@@ -12,3 +12,5 @@ export default async function handler(
 export async function getData() {
   return data;
 }
+
+//test
