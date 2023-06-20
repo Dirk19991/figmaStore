@@ -1,0 +1,28 @@
+.wrapper {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.header {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 57px;
+  min-width: 45%;
+  margin: 0;
+}
+
+.text {
+  font-size: 30px;
+  line-height: 39px;
+  min-width: 45%;
+  margin: 0;
+}
+
+.tist {
+  margin-top: 60px;
+  font-size: 30px;
+  font-weight: 700;
+}

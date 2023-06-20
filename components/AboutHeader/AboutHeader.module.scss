@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  > h3 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  > p {
+    font-size: 30px;
+    line-height: 39px;
+  }
+}

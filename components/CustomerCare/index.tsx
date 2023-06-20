@@ -5,12 +5,12 @@ function CustomerCare() {
     <div className={styles.wrapper}>
       <h2 className={styles.bigHeader}>CUSTOMER CARE</h2>
       <div className={styles.text}>
-        <header className={styles.smallHeader}>
+        <div className={styles.smallHeader}>
           <div>
             <img src='/icons/aboutIcons/blueHalfOval.png' alt='blueHalfOval' />
           </div>
           <h4>Shipping</h4>
-        </header>
+        </div>
         <p className={styles.paragraph}>
           Once you’ve made a purchase, an e-mail confirmation will be sent to
           the e-mail address you provided. This e-mail acts as an invoice and
@@ -27,7 +27,7 @@ function CustomerCare() {
           delivery.
         </p>
 
-        <header className={styles.smallHeader}>
+        <div className={styles.smallHeader}>
           <div>
             <img
               src='/icons/aboutIcons/yellowRectangle.png'
@@ -35,7 +35,7 @@ function CustomerCare() {
             />
           </div>
           <h4>Returns</h4>
-        </header>
+        </div>
         <p className={styles.paragraph}>
           We currently do not accept returns and are unable to edit your order
           once placed. If you would like to cancel your order and replace it
@@ -43,7 +43,7 @@ function CustomerCare() {
           thefigmastore@figma.com.
         </p>
 
-        <header className={styles.smallHeader}>
+        <div className={styles.smallHeader}>
           <div>
             <img
               src='/icons/aboutIcons/greenDoubleOval.png'
@@ -51,7 +51,7 @@ function CustomerCare() {
             />
           </div>
           <h4>Contact Us</h4>
-        </header>
+        </div>
         <p className={styles.paragraph}>
           You can contact support by emailing thefigmastore@figma.com.
         </p>
