@@ -1,4 +1,4 @@
-import Grid from '../components/grid/Grid';
+import Grid from 'widgets/Grid/Grid';
 import SwiperComponent from '../components/swiper/Swiper';
 import clientPromise from '../shared/libs/mongodb';
 

@@ -1,30 +1,12 @@
 import styled from 'styled-components';
+import styles from './GridCell.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
-import background from '../../../public/images/productsMain/background/1.webp';
 import { motion } from 'framer-motion';
 
 interface GridCellProps {
   elem: Product;
 }
-
-const StyledGridCell = styled.div`
-  position: relative;
-  width: 250px;
-  height: 350px;
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 40px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden;
-  cursor: pointer;
-`;
-
 interface ContainerProps {
   display: number;
 }
@@ -52,7 +34,8 @@ function GridCell({ elem }: GridCellProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <StyledGridCell
+    <div
+      className={styles.cell}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -90,7 +73,7 @@ function GridCell({ elem }: GridCellProps) {
           ></Image>
         </MainContainer>
       </>
-    </StyledGridCell>
+    </div>
   );
 }
 export default GridCell;

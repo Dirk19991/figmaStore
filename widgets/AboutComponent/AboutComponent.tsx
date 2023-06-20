@@ -1,9 +1,9 @@
 import styles from './AboutComponent.module.css';
-import AboutImage from 'components/AboutImage';
-import AboutHeader from 'components/AboutHeader';
-import Proceeds from 'components/Proceeds';
-import FAQ from 'components/FAQ';
-import CustomerCare from 'components/CustomerCare';
+import AboutImage from 'components/AboutImage/AboutImage';
+import AboutHeader from 'components/AboutHeader/AboutHeader';
+import Proceeds from 'components/Proceeds/Proceeds';
+import FAQ from 'components/FAQ/FAQ';
+import CustomerCare from 'components/CustomerCare/CustomerCare';
 
 function AboutComponent() {
   return (

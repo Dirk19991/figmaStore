@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import Footer from './footer/Footer';
+import Footer from './Footer/Footer';
 import Header from './header/Header';
 
 interface LayoutProps {

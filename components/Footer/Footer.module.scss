@@ -1,0 +1,78 @@
+.footer {
+  position: relative;
+  margin-top: 30px;
+  height: 425px;
+  background-color: var(--green);
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1100px;
+  padding-top: 50px;
+  margin: 0 auto;
+  display: flex;
+  gap: 100px;
+}
+
+.redCircle {
+  height: 280px;
+  width: 250px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--red);
+  font-size: 36px;
+  font-weight: 500;
+  flex-shrink: 0;
+
+  > :first-child {
+    transform: rotate(90deg);
+    margin-bottom: 20px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 700px;
+  flex-shrink: 2;
+}
+
+.infoUpWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slogan {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  max-width: 270px;
+}
+
+.contactLinks {
+  font-size: 18px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.socialLinks {
+  display: flex;
+  font-size: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  > div {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

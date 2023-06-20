@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import clientPromise from 'shared/libs/mongodb';
 import styled from 'styled-components';
 import { useCartContext } from '../../context/CartContextProvider';
 import { useCountryContext } from '../../context/CountryContextProvider';
@@ -115,10 +116,11 @@ const ThinLine = styled.div`
   margin-bottom: 20px;
 `;
 
-function CartComponent() {
+function CartComponent({ data }: AllProducts) {
   const cart = useCartContext();
   const { country } = useCountryContext();
 
+  console.log(cart);
   const prices: Prices = {
     'UNITED STATES': {
       label: 'priceUS',
@@ -129,13 +131,6 @@ function CartComponent() {
       sign: '£',
     },
   };
-
-  const [data, setData] = useState<null | Product[]>(null);
-  useEffect(() => {
-    const data = fetch('/api/all')
-      .then((data) => data.json())
-      .then((data) => setData(data.response));
-  }, []);
 
   return (
     <Wrapper>

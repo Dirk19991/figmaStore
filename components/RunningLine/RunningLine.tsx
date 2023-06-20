@@ -1,38 +1,11 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
-
-const RunningLineWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 10000px;
-  background-color: var(--green);
-  font-size: 30px;
-  height: 30px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-`;
-
-const RunningLineComponent = styled(motion.div)`
-  position: absolute;
-  bottom: 5px;
-  display: flex;
-  gap: 10px;
-
-  > div {
-    height: 30px;
-
-    > img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-`;
+import styles from './RunningLine.module.scss';
 
 function RunningLine() {
   return (
-    <RunningLineWrapper>
-      <RunningLineComponent
+    <div className={styles.wrapper}>
+      <motion.div
+        className={styles.runningLine}
         initial={{ x: 1900 }}
         animate={{ x: -2000 }}
         transition={{ ease: 'linear', duration: 30, repeat: Infinity }}
@@ -157,8 +130,8 @@ function RunningLine() {
         <div>
           <img src='./icons/sun.svg' alt='sun' />
         </div>
-      </RunningLineComponent>
-    </RunningLineWrapper>
+      </motion.div>
+    </div>
   );
 }
 export default RunningLine;
