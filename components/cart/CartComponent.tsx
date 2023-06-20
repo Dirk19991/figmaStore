@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useCartContext } from '../../context/CartContextProvider';
 import { useCountryContext } from '../../context/CountryContextProvider';
-import findById from '../../utils/findById';
+import findById from '../../shared/utils/findById';
 
 interface Prices {
   'UNITED STATES': {

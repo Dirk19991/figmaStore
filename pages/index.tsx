@@ -1,7 +1,6 @@
 import Grid from '../components/grid/Grid';
-import Header from '../components/header/Header';
 import SwiperComponent from '../components/swiper/Swiper';
-import { getData } from './api/all';
+import clientPromise from '../shared/libs/mongodb';
 
 export default function Home({ data }: AllProducts) {
   return (
@@ -13,11 +12,22 @@ export default function Home({ data }: AllProducts) {
 }
 
 export async function getStaticProps() {
-  const data = await getData();
+  try {
+    const client = await clientPromise;
 
-  return {
-    props: {
-      data,
-    },
-  };
+    const db = client.db('figmaStore');
+
+    const products = await db
+      .collection<Product>('products')
+      .find({})
+      .sort({ metacritic: -1 })
+      .limit(20)
+      .toArray();
+
+    return {
+      props: { data: JSON.parse(JSON.stringify(products)) },
+    };
+  } catch (e) {
+    console.error(e);
+  }
 }

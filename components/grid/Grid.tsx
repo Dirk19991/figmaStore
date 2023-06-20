@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import GridHeader from './header/GridHeader';
 import Link from 'next/link';
-
 import { useCountryContext } from '../../context/CountryContextProvider';
 
 import GridCell from './gridCell/GridCell';

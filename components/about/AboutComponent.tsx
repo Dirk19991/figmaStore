@@ -3,7 +3,6 @@ import AboutImage from './header/AboutImage';
 import AboutHeaderText from './header/AboutHeaderText';
 import Proceeds from './proceeds/Proceeds';
 import FAQ from './faq/FAQ';
-import CustomerCare from './customerCare/CustomerCare';
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -26,7 +25,6 @@ function AboutComponent() {
       </Header>
       <Proceeds />
       <FAQ />
-      <CustomerCare />
     </Wrapper>
   );
 }
