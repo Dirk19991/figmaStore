@@ -21,38 +21,14 @@ function GridCell({ elem }: GridCellProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <>
-        <motion.div
-          animate={{ opacity: hovered ? 1 : 0.5 }}
-          transition={{ duration: 0.5 }}
-          className={cn(styles.hover, hovered ? styles.block : styles.none)}
-        >
-          <Image
-            width={250}
-            height={350}
-            alt={elem.title}
-            src={elem.background}
-            priority
-          ></Image>
-          <Image
-            width={250}
-            height={350}
-            alt={elem.title}
-            src={elem.imageHover}
-            priority
-          ></Image>
-        </motion.div>
-        <motion.div
-          animate={{ opacity: hovered ? 0.5 : 1 }}
-          transition={{ duration: 0.5 }}
-          className={hovered ? styles.none : styles.block}
-        >
-          <Image
-            width={250}
-            height={350}
-            alt={elem.title}
-            src={elem.imageMain}
-          ></Image>
-        </motion.div>
+        <div
+          className={cn(styles.image, hovered ? styles.after : '')}
+          style={{
+            backgroundImage: hovered
+              ? `url(${elem.imageHover}), url(${elem.background})`
+              : `url(${elem.imageMain})`,
+          }}
+        ></div>
       </>
     </div>
   );

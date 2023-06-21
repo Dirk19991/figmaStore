@@ -36,3 +36,14 @@
 .none {
   display: none;
 }
+
+.image {
+  position: relative;
+  z-index: 1;
+  height: 350px;
+  width: 250px;
+  margin: 0 auto;
+  background-size: 250px 350px;
+  background-position: 0px 0px;
+  transition: all 0.5s;
+}
