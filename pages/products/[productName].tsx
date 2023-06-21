@@ -1,4 +1,4 @@
-import Product from '../../components/product/Product';
+import Product from 'widgets/Product/Product';
 import clientPromise from '../../shared/libs/mongodb';
 
 interface ProductParams {

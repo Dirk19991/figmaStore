@@ -1,25 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Info from './description/Info';
-import MainImage from './mainImage/MainImage';
+import styles from './Product.module.scss';
+import ProductInfo from 'components/ProductInfo/ProductInfo';
+import ProductImage from 'components/ProductImage/ProductImage';
 
 interface ProductProps {
   data: Product;
 }
-
-const ProductWrapper = styled.div`
-  display: flex;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 70px;
-`;
-
-const ImageCarousel = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
 
 interface ImageProps {
   source: string;
@@ -46,8 +33,8 @@ function Product({ data }: ProductProps) {
   );
 
   return (
-    <ProductWrapper>
-      <ImageCarousel>
+    <div className={styles.wrapper}>
+      <div className={styles.carousel}>
         <Image
           source={data.productInfo.image1}
           onClick={() => setChosenImage(data.productInfo.image1)}
@@ -78,10 +65,10 @@ function Product({ data }: ProductProps) {
         >
           <img src={data.productInfo.image5} alt='image5' />
         </Image>
-      </ImageCarousel>
-      <MainImage chosenImage={chosenImage}></MainImage>
-      <Info data={data}></Info>
-    </ProductWrapper>
+      </div>
+      <ProductImage chosenImage={chosenImage}></ProductImage>
+      <ProductInfo data={data}></ProductInfo>
+    </div>
   );
 }
 export default Product;

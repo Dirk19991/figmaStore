@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.plus,
+.minus {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid black;
+  font-size: 36px;
+}
+
+.amount {
+  width: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}

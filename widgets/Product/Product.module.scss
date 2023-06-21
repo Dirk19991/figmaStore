@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

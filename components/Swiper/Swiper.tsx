@@ -55,7 +55,6 @@ function SwiperComponent() {
               <Socks />
             </div>
           </SwiperSlide>
-          ...
         </Swiper>
       </div>
     </>

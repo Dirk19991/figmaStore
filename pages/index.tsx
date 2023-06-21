@@ -1,5 +1,5 @@
 import Grid from 'widgets/Grid/Grid';
-import SwiperComponent from '../components/swiper/Swiper';
+import SwiperComponent from 'components/Swiper/Swiper';
 import clientPromise from '../shared/libs/mongodb';
 
 export default function Home({ data }: AllProducts) {

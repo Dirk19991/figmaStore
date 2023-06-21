@@ -12,123 +12,123 @@ function RunningLine() {
       >
         FOR{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         OUR{' '}
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />
+          <img src='/icons/hourglass.svg' alt='hourglass' />
         </div>{' '}
         TIME{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         ON{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />
+          <img src='/icons/sun.svg' alt='sun' />
         </div>{' '}
         FIGMA'S{' '}
         <div>
-          <img src='./icons/snowflake.svg' alt='snowflake' />
+          <img src='/icons/snowflake.svg' alt='snowflake' />
         </div>{' '}
         MARVELOUSLY{' '}
         <div>
-          <img src='./icons/zigzag.svg' alt='zigzag' />
+          <img src='/icons/zigzag.svg' alt='zigzag' />
         </div>{' '}
         CONSIDERED{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         COLLECTION{' '}
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />
+          <img src='/icons/hourglass.svg' alt='hourglass' />
         </div>{' '}
         OF{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         OBJECTS{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />
+          <img src='/icons/sun.svg' alt='sun' />
         </div>{' '}
         FOR{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         OUR{' '}
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />{' '}
+          <img src='/icons/hourglass.svg' alt='hourglass' />{' '}
         </div>
         TIME{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         ON{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />{' '}
+          <img src='/icons/sun.svg' alt='sun' />{' '}
         </div>{' '}
         FIGMA'S{' '}
         <div>
-          <img src='./icons/snowflake.svg' alt='snowflake' />
+          <img src='/icons/snowflake.svg' alt='snowflake' />
         </div>{' '}
         MARVELOUSLY{' '}
         <div>
-          <img src='./icons/zigzag.svg' alt='zigzag' />
+          <img src='/icons/zigzag.svg' alt='zigzag' />
         </div>{' '}
         CONSIDERED{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         COLLECTION{' '}
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />
+          <img src='/icons/hourglass.svg' alt='hourglass' />
         </div>{' '}
         OF{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         OBJECTS{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />
+          <img src='/icons/sun.svg' alt='sun' />
         </div>{' '}
         FOR{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         OUR
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />{' '}
+          <img src='/icons/hourglass.svg' alt='hourglass' />{' '}
         </div>
         TIME{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         ON{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />
+          <img src='/icons/sun.svg' alt='sun' />
         </div>{' '}
         FIGMA'S{' '}
         <div>
-          <img src='./icons/snowflake.svg' alt='snowflake' />
+          <img src='/icons/snowflake.svg' alt='snowflake' />
         </div>{' '}
         MARVELOUSLY{' '}
         <div>
-          <img src='./icons/zigzag.svg' alt='zigzag' />
+          <img src='/icons/zigzag.svg' alt='zigzag' />
         </div>{' '}
         CONSIDERED{' '}
         <div>
-          <img src='./icons/comet.svg' alt='comet' />
+          <img src='/icons/comet.svg' alt='comet' />
         </div>{' '}
         COLLECTION{' '}
         <div>
-          <img src='./icons/hourglass.svg' alt='hourglass' />
+          <img src='/icons/hourglass.svg' alt='hourglass' />
         </div>{' '}
         OF{' '}
         <div>
-          <img src='./icons/snake.svg' alt='snake' />
+          <img src='/icons/snake.svg' alt='snake' />
         </div>{' '}
         OBJECTS{' '}
         <div>
-          <img src='./icons/sun.svg' alt='sun' />
+          <img src='/icons/sun.svg' alt='sun' />
         </div>
       </motion.div>
     </div>
