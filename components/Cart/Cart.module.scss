@@ -1,0 +1,99 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+}
+
+.line {
+  max-width: 1200px;
+  height: 3px;
+  background-color: black;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+}
+
+.item {
+  width: 600px;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.price {
+  width: 150px;
+  font-size: 18px;
+}
+
+.quantity {
+  width: 250px;
+  font-size: 18px;
+}
+
+.subtotal {
+  width: 150px;
+  font-size: 18px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.thinLine {
+  max-width: 1200px;
+  height: 1px;
+  background-color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.removeButton {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

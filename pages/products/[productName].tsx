@@ -19,7 +19,7 @@ export async function getStaticPaths() {
       .collection<Product>('products')
       .find({})
       .sort({ metacritic: -1 })
-      .limit(20)
+      .limit(30)
       .toArray();
 
     const paths = products.map((elem) => {

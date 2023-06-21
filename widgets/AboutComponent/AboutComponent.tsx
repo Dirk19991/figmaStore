@@ -1,4 +1,4 @@
-import styles from './AboutComponent.module.css';
+import styles from './AboutComponent.module.scss';
 import AboutImage from 'components/AboutImage/AboutImage';
 import AboutHeader from 'components/AboutHeader/AboutHeader';
 import Proceeds from 'components/Proceeds/Proceeds';

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
 import styles from './GridCell.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import cn from 'classnames';
 
 interface GridCellProps {
   elem: Product;
@@ -10,25 +10,6 @@ interface GridCellProps {
 interface ContainerProps {
   display: number;
 }
-
-const HoverContainer = styled(motion.div)<ContainerProps>`
-  width: 250px;
-  height: 350px;
-  min-height: 200px;
-  position: relative;
-  display: ${(props) => (props.display ? '' : 'none')};
-
-  > img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
-const MainContainer = styled(motion.div)<ContainerProps>`
-  display: ${(props) => (props.display ? 'none' : '')};
-`;
 
 function GridCell({ elem }: GridCellProps) {
   const [hovered, setHovered] = useState(false);
@@ -40,10 +21,10 @@ function GridCell({ elem }: GridCellProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <>
-        <HoverContainer
+        <motion.div
           animate={{ opacity: hovered ? 1 : 0.5 }}
           transition={{ duration: 0.5 }}
-          display={hovered ? 1 : 0}
+          className={cn(styles.hover, hovered ? styles.block : styles.none)}
         >
           <Image
             width={250}
@@ -59,11 +40,11 @@ function GridCell({ elem }: GridCellProps) {
             src={elem.imageHover}
             priority
           ></Image>
-        </HoverContainer>
-        <MainContainer
+        </motion.div>
+        <motion.div
           animate={{ opacity: hovered ? 0.5 : 1 }}
           transition={{ duration: 0.5 }}
-          display={hovered ? 1 : 0}
+          className={hovered ? styles.none : styles.block}
         >
           <Image
             width={250}
@@ -71,7 +52,7 @@ function GridCell({ elem }: GridCellProps) {
             alt={elem.title}
             src={elem.imageMain}
           ></Image>
-        </MainContainer>
+        </motion.div>
       </>
     </div>
   );

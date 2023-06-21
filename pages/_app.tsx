@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import Layout from '../components/Layout';
+import Layout from 'layout/Layout';
 import CartContextProvider from '../context/CartContextProvider';
 import CountryContextProvider from '../context/CountryContextProvider';
 import 'shared/styles/global.css';
