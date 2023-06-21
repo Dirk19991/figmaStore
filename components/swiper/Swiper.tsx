@@ -1,80 +1,63 @@
-import styled from 'styled-components';
+import styles from './Swiper.module.scss';
 import AsianMan from './imageComponents/AsianMan';
 import Dog from './imageComponents/Dog';
 import GirlWithGlasses from './imageComponents/GirlWithGlasses';
 import Moto from './imageComponents/Moto';
 import Bottle from './imageComponents/Bottle';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import GirlGreenHair from './imageComponents/GirlGreenHair';
 import TShirt from './imageComponents/TShirt';
 import Socks from './imageComponents/Socks';
-import { useContext, useState } from 'react';
-
-const Wrapper = styled.div`
-  height: auto;
-  width: 100%;
-  padding: 0 10px;
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const SwiperWrapper = styled.div`
-  width: 100%;
-  background-color: var(--yellow);
-`;
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 function SwiperComponent() {
   return (
     <>
-      <SwiperWrapper>
+      <div className={styles.swiperWrapper}>
         <Swiper spaceBetween={50} slidesPerView={3}>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <Moto />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <Dog />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <GirlWithGlasses />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <AsianMan />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <Bottle />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <GirlGreenHair />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <TShirt />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Wrapper>
+            <div className={styles.imageWrapper}>
               <Socks />
-            </Wrapper>
+            </div>
           </SwiperSlide>
           ...
         </Swiper>
-      </SwiperWrapper>
+      </div>
     </>
   );
 }
