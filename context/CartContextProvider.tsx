@@ -1,4 +1,4 @@
-import { Context, createContext, useContext, useState } from 'react';
+import { Context, createContext, useContext, useEffect, useState } from 'react';
 
 interface Item {
   id: number;
@@ -25,13 +25,17 @@ function CartContextProvider({ children }: any) {
   const addItem = (id: number, quantity: number) => {
     setItems((prev) => {
       if (prev.filter((elem) => elem.id === id).length > 0) {
-        return prev.map((elem) => {
+        const updated = prev.map((elem) => {
           return elem.id === id
             ? { id: elem.id, quantity: elem.quantity + quantity }
             : elem;
         });
+        localStorage.setItem('items', JSON.stringify(updated));
+        return updated;
       } else {
-        return [...prev, { id: id, quantity: quantity }];
+        const updated = [...prev, { id: id, quantity: quantity }];
+        localStorage.setItem('items', JSON.stringify(updated));
+        return updated;
       }
     });
   };
@@ -39,14 +43,22 @@ function CartContextProvider({ children }: any) {
   const removeItem = (id: number) => {
     setItems((prev) => {
       if (prev.filter((elem) => elem.id === id).length > 0) {
-        return prev.map((elem) =>
-          elem.id === id ? { id: elem.id, quantity: elem.quantity - 1 } : elem
-        );
+        const updated = prev.filter((elem) => elem.id !== id);
+
+        localStorage.setItem('items', JSON.stringify(updated));
+        return updated;
       } else {
         return prev;
       }
     });
   };
+
+  useEffect(() => {
+    const storageItems = localStorage.getItem('items');
+    if (storageItems) {
+      setItems(JSON.parse(storageItems));
+    }
+  }, []);
 
   const cartValue = {
     items,

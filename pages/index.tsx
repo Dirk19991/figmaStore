@@ -21,7 +21,6 @@ export async function getStaticProps() {
       .collection<Product>('products')
       .find({})
       .sort({ metacritic: -1 })
-      .limit(30)
       .toArray();
 
     return {

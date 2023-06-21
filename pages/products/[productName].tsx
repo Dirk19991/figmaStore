@@ -19,7 +19,6 @@ export async function getStaticPaths() {
       .collection<Product>('products')
       .find({})
       .sort({ metacritic: -1 })
-      .limit(30)
       .toArray();
 
     const paths = products.map((elem) => {
@@ -53,7 +52,6 @@ export async function getStaticProps({ params }: ProductParams) {
       .collection<Product>('products')
       .find({ title: regexp })
       .sort({ metacritic: -1 })
-      .limit(20)
       .toArray()) as Product[];
 
     const data = JSON.parse(JSON.stringify(dataArr[0]));

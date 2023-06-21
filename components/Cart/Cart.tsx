@@ -15,7 +15,7 @@ interface Prices {
 }
 
 function CartComponent({ data }: AllProducts) {
-  const cart = useCartContext();
+  const { items, removeItem } = useCartContext();
   const { country } = useCountryContext();
 
   const prices: Prices = {
@@ -32,7 +32,7 @@ function CartComponent({ data }: AllProducts) {
   return (
     <div className={styles.wrapper}>
       <h3>
-        {cart.items.length} {cart.items.length === 1 ? 'item' : 'items'} in Cart
+        {items.length} {items.length === 1 ? 'item' : 'items'} in Cart
       </h3>
       <div className={styles.line} />
       <div className={styles.tableHeader}>
@@ -43,7 +43,7 @@ function CartComponent({ data }: AllProducts) {
       </div>
       <div className={styles.thinLine} />
       <div className={styles.table}>
-        {cart.items.map((item) => {
+        {items.map((item) => {
           const currentItem = data ? findById(data, item.id) : null;
           const sign = prices[country].sign;
           const currentPrice = currentItem
@@ -53,7 +53,12 @@ function CartComponent({ data }: AllProducts) {
             <>
               <div className={styles.tableRow} key={item.id}>
                 <h3 className={styles.item}>
-                  <button className={styles.removeButton}>X</button>
+                  <button
+                    onClick={() => removeItem(item.id)}
+                    className={styles.removeButton}
+                  >
+                    X
+                  </button>
                   <div className={styles.image}>
                     <img
                       src={currentItem ? currentItem.imageMain : ''}
