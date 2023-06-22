@@ -1,14 +1,9 @@
 import styles from './GridCell.module.scss';
-import Image from 'next/image';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import cn from 'classnames';
 
 interface GridCellProps {
   elem: Product;
-}
-interface ContainerProps {
-  display: number;
 }
 
 function GridCell({ elem }: GridCellProps) {
