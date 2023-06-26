@@ -1,4 +1,4 @@
-.hovered {
+.hovered, .invisible {
   position: absolute;
   color: black;
   font-size: 30px;
@@ -14,5 +14,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s;
+  user-select: none; 
   cursor: pointer;
+
+}
+
+.hovered {
+  opacity: 1
+}
+
+.invisible {
+  opacity: 0
 }

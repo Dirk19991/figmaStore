@@ -43,7 +43,7 @@ function CustomerCare() {
           thefigmastore@figma.com.
         </p>
 
-        <div className={styles.smallHeader}>
+        <div id="contact" className={styles.smallHeader}>
           <div>
             <img
               src='/icons/aboutIcons/greenDoubleOval.png'

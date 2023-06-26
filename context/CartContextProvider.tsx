@@ -9,12 +9,14 @@ interface ICartContext {
   items: Item[] | [];
   addItem: (id: number, quantity: number) => void;
   removeItem: (id: number) => void;
+  decreaseItems: (id: number) => void;
 }
 
 export const CartContext = createContext<ICartContext>({
   items: [],
   addItem: (id, quantity) => [],
   removeItem: (id) => [],
+  decreaseItems: (id) => [],
 });
 
 export const useCartContext = () => useContext(CartContext);
@@ -53,6 +55,28 @@ function CartContextProvider({ children }: any) {
     });
   };
 
+  const decreaseItems = (id: number) => {
+    setItems((prev) => {
+      const currentItem = prev.filter((elem) => elem.id === id);
+      if (currentItem.length > 0) {
+        if (currentItem[0].quantity === 1) {
+          const updated = prev.filter((elem) => elem.id !== id);
+
+          localStorage.setItem('items', JSON.stringify(updated));
+          return updated;
+        } else {
+          const updated = prev.map((elem) =>
+            elem.id === id ? { ...elem, quantity: elem.quantity - 1 } : elem
+          );
+          localStorage.setItem('items', JSON.stringify(updated));
+          return updated;
+        }
+      } else {
+        return prev;
+      }
+    });
+  };
+
   useEffect(() => {
     const storageItems = localStorage.getItem('items');
     if (storageItems) {
@@ -64,6 +88,7 @@ function CartContextProvider({ children }: any) {
     items,
     addItem,
     removeItem,
+    decreaseItems,
   };
 
   return (

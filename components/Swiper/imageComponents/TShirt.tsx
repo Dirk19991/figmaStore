@@ -7,15 +7,14 @@ function TShirt() {
 
   return (
     <Link href='/products/figma-wordmark-tee'>
-      {hovered && (
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={styles.hovered}
+          className={hovered ? styles.hovered : styles.invisible}
         >
           Figma wordmark tee
         </div>
-      )}
+    
       <svg width='650' height='650' viewBox='0 0 650 650' fill='none'>
         <defs>
           <pattern id='8' patternUnits='objectBoundingBox' width='1' height='1'>

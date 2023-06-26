@@ -47,6 +47,15 @@
 .quantity {
   width: 250px;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  > div {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .subtotal {
@@ -85,7 +94,7 @@
     background-color: black;
   }
   &:hover {
-    color: white
+    color: white;
   }
 }
 

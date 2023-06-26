@@ -7,15 +7,15 @@ function GirlGreenHair() {
 
   return (
     <Link href='/products/figma-hoodie'>
-      {hovered && (
+   
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={styles.hovered}
+          className={hovered ? styles.hovered : styles.invisible}
         >
           Figma hoodie
         </div>
-      )}
+ 
       <svg width='650' height='648' viewBox='0 0 650 648' fill='none'>
         <defs>
           <pattern id='4' patternUnits='objectBoundingBox' width='1' height='1'>

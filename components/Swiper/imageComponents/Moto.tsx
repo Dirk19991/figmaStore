@@ -7,15 +7,15 @@ function Moto() {
 
   return (
     <Link href='/products/blue-figma-hat'>
-      {hovered && (
+   
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={styles.hovered}
+          className={hovered ? styles.hovered : styles.invisible}
         >
           Blue Figma hat
         </div>
-      )}
+   
       <svg width='650' height='648' viewBox='0 0 650 648' fill='none'>
         <defs>
           <pattern id='6' patternUnits='objectBoundingBox' width='1' height='1'>

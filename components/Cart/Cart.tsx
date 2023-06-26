@@ -2,6 +2,8 @@ import styles from './Cart.module.scss';
 import { useCartContext } from '../../context/CartContextProvider';
 import { useCountryContext } from '../../context/CountryContextProvider';
 import findById from '../../shared/utils/findById';
+import Link from 'next/link';
+import CartRow from 'components/CartRow/CartRow';
 
 interface Prices {
   'UNITED STATES': {
@@ -44,42 +46,7 @@ function CartComponent({ data }: AllProducts) {
       <div className={styles.thinLine} />
       <div className={styles.table}>
         {items.map((item) => {
-          const currentItem = data ? findById(data, item.id) : null;
-          const sign = prices[country].sign;
-          const currentPrice = currentItem
-            ? currentItem[prices[country].label]
-            : null;
-          return (
-            <>
-              <div className={styles.tableRow} key={item.id}>
-                <h3 className={styles.item}>
-                  <button
-                    onClick={() => removeItem(item.id)}
-                    className={styles.removeButton}
-                  >
-                    X
-                  </button>
-                  <div className={styles.image}>
-                    <img
-                      src={currentItem ? currentItem.imageMain : ''}
-                      alt='image'
-                    />
-                  </div>
-                  <div>{currentItem ? currentItem.title : 'loading'}</div>
-                </h3>
-                <div className={styles.price}>
-                  {data ? `${sign}${currentPrice}` : 'loading'}
-                </div>
-                <div className={styles.quantity}>{item.quantity}</div>
-                <div className={styles.subtotal}>
-                  {data
-                    ? `${sign}${item.quantity * (currentPrice || 0)}`
-                    : 'loading'}
-                </div>
-              </div>
-              <div className={styles.thinLine} />
-            </>
-          );
+          return <CartRow data={data} item={item} />;
         })}
       </div>
     </div>

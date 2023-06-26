@@ -62,6 +62,17 @@
   gap: 20px;
   font-size: 16px;
   font-weight: 500;
+
+  > a > div  {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.2s;
+    
+    &:hover {
+      text-decoration-color: black
+    }
+  }
 }
 
 .socialLinks {
@@ -70,9 +81,15 @@
   gap: 30px;
   flex-wrap: wrap;
 
-  > div {
+
+  > a > div  {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.2s;
+    
     &:hover {
-      text-decoration: underline;
+      text-decoration-color: black
     }
   }
 }

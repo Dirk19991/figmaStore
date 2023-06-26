@@ -7,15 +7,15 @@ function Socks() {
 
   return (
     <Link href='/products/light-grey-comment-socks'>
-      {hovered && (
+  
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={styles.hovered}
+          className={hovered ? styles.hovered : styles.invisible}
         >
           Light grey comment socks
         </div>
-      )}
+  
       <svg width='658' height='658' viewBox='-2 -2 654 654' fill='none'>
         <defs>
           <pattern id='7' patternUnits='objectBoundingBox' width='1' height='1'>

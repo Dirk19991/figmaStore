@@ -1,3 +1,5 @@
+import MinusButton from 'components/MinusButton/MinusButton';
+import PlusButton from 'components/PlusButton/PlusButton';
 import { Dispatch, SetStateAction } from 'react';
 import styles from './ProductButtons.module.scss';
 
@@ -22,13 +24,9 @@ function ProductButtons({ amount, setAmount }: ProductButtonsProps) {
 
   return (
     <div className={styles.wrapper}>
-      <button className={styles.plus} onClick={increaseItems}>
-        <img src='/icons/plus.svg' alt='plus' />
-      </button>
+      <PlusButton increaseItems={increaseItems} />
       <div className={styles.amount}>{amount}</div>
-      <button className={styles.minus} onClick={decreaseItems}>
-        <img src='/icons/minus.svg' alt='minus' />
-      </button>
+      <MinusButton decreaseItems={decreaseItems} />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import styles from './Footer.module.scss';
 import RunningLine from 'components/RunningLine/RunningLine';
+import Link from 'next/link';
 
 function Footer() {
   const redCircleRef = useRef(null);
@@ -51,8 +52,14 @@ function Footer() {
                 transition: 'all 0.5s 0.6s',
               }}
             >
-              <div>Privacy & Terms</div>
-              <div>Contact Us</div>
+                 <Link href={'https://store.figma.com/pages/privacy-policy'}>
+                 <div>Privacy & Terms</div>
+            </Link>
+            <Link href={'/about/#contact'}>
+            <div>Contact Us</div>
+            </Link>
+           
+             
             </div>
           </div>
           <div
@@ -63,10 +70,18 @@ function Footer() {
               transition: 'all 0.5s 0.9s',
             }}
           >
+            <Link href={'https://figma.com/'}>
             <div>FIGMA</div>
+            </Link>
+            <Link href={'https://twitter.com/figma'}>
             <div>TWITTER</div>
+            </Link>
+            <Link href={'https://www.instagram.com/figma'}>
             <div>INSTAGRAM</div>
+            </Link>
+            <Link href={'https://www.youtube.com/c/Figmadesign'}>
             <div>YOUTUBE</div>
+            </Link>
           </div>
         </div>
       </div>

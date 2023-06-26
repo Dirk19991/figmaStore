@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './ProductInfo.module.scss';
 import { useCartContext } from 'context/CartContextProvider';
 import { useCountryContext } from 'context/CountryContextProvider';
-import ProductButtons from 'components/ProductButtons/ProductButtons';
+import ProductButtons from 'widgets/ProductButtons/ProductButtons';
 
 interface InfoProps {
   data: Product;

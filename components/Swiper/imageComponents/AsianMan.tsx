@@ -7,15 +7,15 @@ function AsianMan() {
 
   return (
     <Link href='/products/rainbow-logo-tee'>
-      {hovered && (
+
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={styles.hovered}
+          className={hovered ? styles.hovered : styles.invisible}
         >
           Rainbow logo tee
         </div>
-      )}
+ 
       <svg width='650' height='650' viewBox='-2 -2 654 654' fill='none'>
         <defs>
           <pattern id='5' patternUnits='objectBoundingBox' width='1' height='1'>
