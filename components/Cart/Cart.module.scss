@@ -85,7 +85,7 @@
     background-color: black;
   }
   &:hover {
-    color: white
+    color: white;
   }
 }
 
@@ -113,4 +113,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.totalWrapper {
+  display: flex;
+  width: 150px;
+  gap: 20px;
 }

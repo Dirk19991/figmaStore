@@ -34,7 +34,7 @@ const prices: Prices = {
 };
 
 const CartRow = ({ item, data }: CartRowProps) => {
-  const { items, removeItem, addItem, decreaseItems } = useCartContext();
+  const { removeItem, addItem, decreaseItems } = useCartContext();
   const { country } = useCountryContext();
 
   const currentItem = data ? findById(data, item.id) : null;
@@ -42,8 +42,6 @@ const CartRow = ({ item, data }: CartRowProps) => {
   const currentPrice = currentItem ? currentItem[prices[country].label] : null;
 
   const formattedName = currentItem?.title.replaceAll(' ', '-').toLowerCase();
-
-  const increaseItems = () => {};
 
   return (
     <>

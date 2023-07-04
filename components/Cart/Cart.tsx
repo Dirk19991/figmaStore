@@ -31,6 +31,17 @@ function CartComponent({ data }: AllProducts) {
     },
   };
 
+  let sum = 0;
+  items.forEach((item) => {
+    const currentItem = findById(data, item.id);
+    const quantity = item.quantity;
+    const subtotal =
+      country === 'UNITED KINGDOM'
+        ? quantity * currentItem.priceUK
+        : quantity * currentItem.priceUS;
+    sum += subtotal;
+  });
+
   return (
     <div className={styles.wrapper}>
       <h3>
@@ -48,6 +59,15 @@ function CartComponent({ data }: AllProducts) {
         {items.map((item) => {
           return <CartRow data={data} item={item} />;
         })}
+      </div>
+      <div className={styles.total}>
+        <div className={styles.totalWrapper}>
+          <div>Total:</div>
+          <div>
+            {prices[country].sign}
+            {sum}
+          </div>
+        </div>
       </div>
     </div>
   );
