@@ -25,7 +25,6 @@ function GridCell({ elem }: GridCellProps) {
           }}
         ></div>
         <div
-          className={styles.none}
           style={{
             backgroundImage: `url(${elem.imageHover}), url(${elem.background})`,
           }}
