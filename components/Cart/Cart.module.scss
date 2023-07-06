@@ -115,17 +115,35 @@
   align-items: center;
 }
 
-.total {
+.totalCheckoutWrapper {
+  align-self: flex-end;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
+  gap: 20px;
   font-size: 26px;
   font-weight: 700;
   line-height: 32px;
 }
 
-.totalWrapper {
+.total {
   display: flex;
+  justify-content: flex-start;
   width: 150px;
   gap: 20px;
+}
+
+.checkout {
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.507);
+  }
 }

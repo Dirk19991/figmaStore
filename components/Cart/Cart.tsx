@@ -60,14 +60,17 @@ function CartComponent({ data }: AllProducts) {
           return <CartRow data={data} item={item} />;
         })}
       </div>
-      <div className={styles.total}>
-        <div className={styles.totalWrapper}>
+      <div className={styles.totalCheckoutWrapper}>
+        <div className={styles.total}>
           <div>Total:</div>
           <div>
             {prices[country].sign}
             {sum}
           </div>
         </div>
+        <Link href={'/checkout'}>
+          <button className={styles.checkout}>CHECKOUT</button>
+        </Link>
       </div>
     </div>
   );
