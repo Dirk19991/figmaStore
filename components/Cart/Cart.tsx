@@ -20,6 +20,8 @@ function CartComponent({ data }: AllProducts) {
   const { items, removeItem } = useCartContext();
   const { country } = useCountryContext();
 
+  console.log(items);
+
   const prices: Prices = {
     'UNITED STATES': {
       label: 'priceUS',

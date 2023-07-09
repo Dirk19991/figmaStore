@@ -1,10 +1,9 @@
 import CartComponent from 'components/Cart/Cart';
 import clientPromise from 'shared/libs/mongodb';
 
-function Cart({ data }: AllProducts) {
+export default function Cart({ data }: AllProducts) {
   return <CartComponent data={data} />;
 }
-export default Cart;
 
 export async function getStaticProps() {
   try {

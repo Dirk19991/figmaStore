@@ -26,3 +26,14 @@ interface Item {
   id: number;
   quantity: number;
 }
+
+interface Prices {
+  'UNITED STATES': {
+    label: 'priceUS';
+    sign: '$';
+  };
+  'UNITED KINGDOM': {
+    label: 'priceUK';
+    sign: '£';
+  };
+}

@@ -5,9 +5,9 @@ interface ProductParams {
   params: { productName: string };
 }
 
-const ProductPage = ({ data }: { data: Product }) => {
+export default function ProductPage({ data }: { data: Product }) {
   return <Product data={data} />;
-};
+}
 
 export async function getStaticPaths() {
   try {
@@ -63,5 +63,3 @@ export async function getStaticProps({ params }: ProductParams) {
 
   // Pass post data to the page via props
 }
-
-export default ProductPage;

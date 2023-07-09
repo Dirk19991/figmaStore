@@ -1,0 +1,19 @@
+.wrapper {
+  width: 45%;
+  background-color: var(--yellow);
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 40px;
+  width: 500px;
+}
+
+.goods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

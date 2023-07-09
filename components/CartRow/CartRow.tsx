@@ -5,21 +5,11 @@ import { useCountryContext } from 'context/CountryContextProvider';
 import Link from 'next/link';
 import findById from 'shared/utils/findById';
 import styles from './CartRow.module.scss';
+import Image from 'next/image';
 
 interface CartRowProps {
   item: Item;
   data: Product[];
-}
-
-interface Prices {
-  'UNITED STATES': {
-    label: 'priceUS';
-    sign: '$';
-  };
-  'UNITED KINGDOM': {
-    label: 'priceUK';
-    sign: '£';
-  };
 }
 
 const prices: Prices = {
@@ -55,7 +45,12 @@ const CartRow = ({ item, data }: CartRowProps) => {
           </button>
           <Link href={`/products/${formattedName}`}>
             <div className={styles.image}>
-              <img src={currentItem ? currentItem.imageMain : ''} alt='image' />
+              <Image
+                src={currentItem ? currentItem.imageMain : ''}
+                width={120}
+                height={120}
+                alt='image'
+              />
             </div>
           </Link>
 
