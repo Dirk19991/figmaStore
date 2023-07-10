@@ -1,4 +1,71 @@
 .wrapper {
   width: 55%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  padding-right: 80px;
+  padding-left: 20px;
+  width: 550px;
+  max-width: 80%;
+  font-size: 16px;
+  align-self: flex-end;
+
+  > * {
+    flex-shrink: 2;
+  }
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input {
+  font-size: 16px;
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.37);
+
+  &:focus {
+    outline: none;
+    border-width: 2px;
+    border-color: green;
+  }
+}
+
+.contactInput {
+  margin-bottom: 20px;
+}
+
+.countrySelect,
+.stateSelect {
+  cursor: pointer;
+  margin-bottom: 10px;
+  &:focus {
+    border-width: 2px;
+  }
+}
+
+.name {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.firstNameInput {
+  max-width: 220px;
+}
+
+.lastNameInput {
+  max-width: 220px;
 }

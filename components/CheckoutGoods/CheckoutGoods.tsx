@@ -18,6 +18,9 @@ const CheckoutGoods = ({ data }: AllProducts) => {
 
   const giftFormHandler: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    if (!giftCardValue) {
+      return;
+    }
     if (giftCodes.includes(giftCardValue.toLowerCase())) {
       setDiscount(0.95);
       setCodeStatus('active');

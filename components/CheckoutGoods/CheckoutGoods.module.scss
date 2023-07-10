@@ -40,7 +40,13 @@
   height: 50px;
   border-radius: 5px;
   padding: 10px;
-  border: 1px transparent solid;
+  border: 2px solid transparent;
+
+  &:focus {
+    outline: none;
+    border-width: 2px;
+    border-color: green;
+  }
 }
 
 .giftButton {
