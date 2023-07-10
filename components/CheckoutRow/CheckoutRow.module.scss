@@ -5,6 +5,10 @@
   font-size: 16px;
 }
 
+.link {
+  position: relative;
+}
+
 .image {
   width: 60px;
   height: 60px;
@@ -27,4 +31,21 @@
 
 .subtotal {
   margin-left: auto;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  color: white;
+  font-size: 10px;
+  right: -8px;
+  top: -8px;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
 }

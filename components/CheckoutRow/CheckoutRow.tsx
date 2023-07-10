@@ -3,6 +3,7 @@ import { useCountryContext } from 'context/CountryContextProvider';
 import findById from 'shared/utils/findById';
 import styles from './CheckoutRow.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface CheckoutRowProps {
   item: Item;
@@ -32,14 +33,17 @@ const CheckoutRow = ({ item, data }: CheckoutRowProps) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.image}>
-        <Image
-          src={currentItem ? currentItem.imageMain : ''}
-          width={80}
-          height={80}
-          alt='image'
-        />
-      </div>
+      <Link className={styles.link} href={`/products/${formattedName}`}>
+        <div className={styles.image}>
+          <Image
+            src={currentItem ? currentItem.imageMain : ''}
+            width={80}
+            height={80}
+            alt='image'
+          />
+        </div>
+        <div className={styles.circle}>{item.quantity}</div>
+      </Link>
       <div>{currentItem ? currentItem.title : 'loading'}</div>
       <div className={styles.subtotal}>
         {data ? `${sign}${item.quantity * (currentPrice || 0)}` : 'loading'}

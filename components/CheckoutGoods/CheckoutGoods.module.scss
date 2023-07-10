@@ -9,11 +9,80 @@
   flex-direction: column;
   margin-top: 60px;
   margin-left: 40px;
-  width: 500px;
+  padding-right: 20px;
+  max-width: 450px;
 }
 
 .goods {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.line {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+  height: 1px;
+  margin-bottom: 20px;
+}
+
+.giftForm {
+  display: flex;
   gap: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.giftInput {
+  font-size: 16px;
+  width: 370px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px transparent solid;
+}
+
+.giftButton {
+  font-size: 16px;
+  background-color: #cc9f00;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.2s;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.discount {
+  display: flex;
+  gap: 10px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.active {
+  background-color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.applied {
+  color: green;
+  position: absolute;
+  bottom: -15px;
+}
+.rejected {
+  color: red;
+  position: absolute;
+  bottom: -15px;
 }
