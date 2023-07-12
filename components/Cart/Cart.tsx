@@ -4,6 +4,8 @@ import { useCountryContext } from '../../context/CountryContextProvider';
 import findById from '../../shared/utils/findById';
 import Link from 'next/link';
 import CartRow from 'components/CartRow/CartRow';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface Prices {
   'UNITED STATES': {
@@ -17,8 +19,9 @@ interface Prices {
 }
 
 function CartComponent({ data }: AllProducts) {
-  const { items, removeItem } = useCartContext();
+  const { items, removeItem, ordered, setOrdered } = useCartContext();
   const { country } = useCountryContext();
+  const router = useRouter();
 
   const prices: Prices = {
     'UNITED STATES': {
@@ -41,6 +44,29 @@ function CartComponent({ data }: AllProducts) {
         : quantity * currentItem.priceUS;
     sum += subtotal;
   });
+
+  const handleRouteChange = () => {
+    setOrdered(false);
+  };
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+
+  if (ordered) {
+    return (
+      <div className={styles.wrapper}>
+        <h1 className={styles.thanks}>Thank you for your order!</h1>
+        <Link className={styles.continue} href={'/'}>
+          <h2>Continue shopping</h2>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -68,9 +94,11 @@ function CartComponent({ data }: AllProducts) {
             {sum}
           </div>
         </div>
-        <Link href={'/checkout'}>
-          <button className={styles.checkout}>CHECKOUT</button>
-        </Link>
+        {items.length > 0 && (
+          <Link href={'/checkout'}>
+            <button className={styles.checkout}>CHECKOUT</button>
+          </Link>
+        )}
       </div>
     </div>
   );

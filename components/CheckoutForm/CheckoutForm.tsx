@@ -1,12 +1,13 @@
-import { ChangeEventHandler, useState } from 'react';
+import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import styles from './CheckoutForm.module.scss';
 import cn from 'classnames';
 import USAStates from 'shared/data/USAStates';
 import UKCounties from 'shared/data/UKCounties';
-import {
-  AvailableCountries,
-  useCountryContext,
-} from 'context/CountryContextProvider';
+import { useCountryContext } from 'context/CountryContextProvider';
+import Link from 'next/link';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import router from 'next/router';
+import { useCartContext } from 'context/CartContextProvider';
 
 const COUNTRIES = ['UNITED STATES', 'UNITED KINGDOM'] as const;
 
@@ -15,53 +16,80 @@ type Values = {
   [K in Country]: string;
 };
 
+type Inputs = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  city: string;
+  address: string;
+  postalCode: string;
+  country: Country;
+  state: string;
+};
+
 const VALUES: Values = {
   'UNITED STATES': 'USA',
   'UNITED KINGDOM': 'UK',
 } as const;
 
 const CheckoutForm = () => {
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [selectedCountry, setSelectedCountry] =
-    useState<Country>('UNITED STATES');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
 
   const { country, setCountry } = useCountryContext();
+  const { clearCart, setOrdered } = useCartContext();
 
-  const emailHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setEmail(e.target.value);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<Inputs>({ mode: 'onBlur' });
+
+  const formSubmitHandler: SubmitHandler<Inputs> = async (data) => {
+    try {
+      setStatus('loading');
+      await fetch('/api/orders', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
+      clearCart();
+      setOrdered(true);
+      router.push('/cart');
+    } catch (error) {
+      setStatus('error');
+      console.log(error);
+    }
   };
 
-  const firstNameHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const lastNameHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const selectCountryHandler: ChangeEventHandler<HTMLSelectElement> = (e) => {
-    setSelectedCountry(e.target.value as Country);
-    setCountry(e.target.value as AvailableCountries);
-  };
+  console.log(errors);
 
   return (
     <div className={styles.wrapper}>
-      <form className={styles.content}>
+      <form
+        onSubmit={handleSubmit(formSubmitHandler)}
+        className={styles.content}
+      >
         <div className={styles.header}>Contact</div>
-        <input
-          value={email}
-          onChange={emailHandler}
-          className={cn(styles.input, styles.contactInput)}
-          placeholder='Email'
-          type='text'
-        />
+        <div className={cn(styles.inputWrapper, styles.bottom20)}>
+          <input
+            className={styles.input}
+            {...register('email', {
+              required: true,
+              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            })}
+            placeholder='Email'
+            type='text'
+          />
+          <div className={styles.error}>
+            {errors?.email && 'Please enter email in correct format'}
+          </div>
+        </div>
+
         <div className={styles.header}>Shipping address</div>
         <select
-          onChange={selectCountryHandler}
-          value={selectedCountry}
-          className={cn(styles.input, styles.countrySelect)}
+          {...register('country', {
+            required: true,
+          })}
+          className={cn(styles.input, styles.countrySelect, styles.bottom20)}
           name='country'
           id='country'
         >
@@ -70,7 +98,10 @@ const CheckoutForm = () => {
           ))}
         </select>
         <select
-          className={cn(styles.input, styles.stateSelect)}
+          {...register('state', {
+            required: true,
+          })}
+          className={cn(styles.input, styles.stateSelect, styles.bottom20)}
           name='state'
           id='state'
         >
@@ -79,20 +110,75 @@ const CheckoutForm = () => {
           {country === 'UNITED KINGDOM' &&
             UKCounties.map((elem) => <option value={elem}>{elem}</option>)}
         </select>
-        <div className={styles.name}>
+        <div className={cn(styles.name, styles.bottom20)}>
+          <div className={cn(styles.inputWrapper)}>
+            <input
+              {...register('firstName', { required: true })}
+              className={cn(styles.input, styles.firstNameInput)}
+              placeholder='First name'
+              type='text'
+            />
+            <div className={styles.error}>
+              {errors?.firstName && 'Mandatory field'}
+            </div>
+          </div>
+          <div className={cn(styles.inputWrapper)}>
+            <input
+              {...register('lastName', { required: true })}
+              className={cn(styles.input, styles.lastNameInput)}
+              placeholder='Last name'
+              type='text'
+            />
+            <div className={styles.error}>
+              {errors?.lastName && 'Mandatory field'}
+            </div>
+          </div>
+        </div>
+        <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
-            value={firstName}
-            onChange={firstNameHandler}
-            className={cn(styles.input, styles.firstNameInput)}
-            placeholder='First name'
+            {...register('city', { required: true })}
+            className={cn(styles.input)}
+            placeholder='City'
             type='text'
           />
+          <div className={styles.error}>
+            {errors?.city && 'Mandatory field'}
+          </div>
+        </div>
+        <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
-            value={lastName}
-            onChange={lastNameHandler}
-            className={cn(styles.input, styles.lastNameInput)}
-            placeholder='Last name'
+            {...register('address', { required: true })}
+            className={cn(styles.input)}
+            placeholder='Address'
             type='text'
+          />
+          <div className={styles.error}>
+            {errors?.address && 'Mandatory field'}
+          </div>
+        </div>
+        <div className={cn(styles.inputWrapper, styles.bottom20)}>
+          <input
+            {...register('postalCode', { required: true, pattern: /^\d+$/ })}
+            className={cn(styles.input)}
+            placeholder='Postal code'
+            type='text'
+          />
+          <div className={styles.error}>
+            {errors?.postalCode?.type === 'required' && 'Mandatory field'}
+            {errors?.postalCode?.type === 'pattern' &&
+              'Postal code can only contain numbers'}
+          </div>
+        </div>
+        <div className={styles.placeOrderWrapper}>
+          <Link href={'/cart'}>
+            <div className={styles.return}>&#8249; Return to cart</div>
+          </Link>
+
+          <input
+            value={status === 'loading' ? 'Loading...' : 'Place order'}
+            className={cn(styles.placeOrderButton)}
+            disabled={!isValid}
+            type='submit'
           />
         </div>
       </form>

@@ -1,4 +1,12 @@
-import { Context, createContext, useContext, useEffect, useState } from 'react';
+import {
+  Context,
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 interface Item {
   id: number;
@@ -10,6 +18,9 @@ interface ICartContext {
   addItem: (id: number, quantity: number) => void;
   removeItem: (id: number) => void;
   decreaseItems: (id: number) => void;
+  clearCart: () => void;
+  ordered: boolean;
+  setOrdered: Dispatch<SetStateAction<boolean>>;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -17,12 +28,16 @@ export const CartContext = createContext<ICartContext>({
   addItem: (id, quantity) => [],
   removeItem: (id) => [],
   decreaseItems: (id) => [],
+  clearCart: () => [],
+  ordered: false,
+  setOrdered: () => [],
 });
 
 export const useCartContext = () => useContext(CartContext);
 
 function CartContextProvider({ children }: any) {
   const [items, setItems] = useState<Item[] | []>([]);
+  const [ordered, setOrdered] = useState(false);
 
   const addItem = (id: number, quantity: number) => {
     setItems((prev) => {
@@ -77,6 +92,10 @@ function CartContextProvider({ children }: any) {
     });
   };
 
+  const clearCart = () => {
+    setItems([]);
+  };
+
   useEffect(() => {
     const storageItems = localStorage.getItem('items');
     if (storageItems) {
@@ -89,6 +108,9 @@ function CartContextProvider({ children }: any) {
     addItem,
     removeItem,
     decreaseItems,
+    clearCart,
+    ordered,
+    setOrdered,
   };
 
   return (
