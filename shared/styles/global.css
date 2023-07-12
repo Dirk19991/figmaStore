@@ -16,6 +16,15 @@
   font-weight: 700;
 }
 
+:root {
+  --black: #000;
+  --white: #fff;
+  --red: #f24e1e;
+  --green: #0fa958;
+  --yellow: #ffc700;
+  --purple: #c7b9ff;
+}
+
 html,
 body {
   color: #111;
@@ -23,13 +32,12 @@ body {
   margin: 0;
   font-family: 'Whyte';
   font-size: 12px;
-  --black: #000;
-  --white: #fff;
-  --red: #f24e1e;
-  --green: #0fa958;
-  --yellow: #ffc700;
-  --purple: #c7b9ff;
   font-display: optional;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 a {

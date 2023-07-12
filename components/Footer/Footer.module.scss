@@ -1,9 +1,11 @@
 .footer {
   position: relative;
   margin-top: 30px;
-  height: 425px;
+  min-height: 425px;
   background-color: var(--green);
   overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .wrapper {
@@ -12,6 +14,11 @@
   margin: 0 auto;
   display: flex;
   gap: 100px;
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .redCircle {
@@ -28,6 +35,12 @@
   font-weight: 500;
   flex-shrink: 0;
 
+  @media (max-width: 850px) {
+    height: 332px;
+    width: 300px;
+    align-self: center;
+  }
+
   > :first-child {
     transform: rotate(90deg);
     margin-bottom: 20px;
@@ -40,11 +53,20 @@
   justify-content: space-between;
   flex-basis: 700px;
   flex-shrink: 2;
+
+  @media (max-width: 850px) {
+    flex-basis: 0;
+    flex-shrink: 2;
+  }
 }
 
 .infoUpWrapper {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 850px) {
+    margin-bottom: 30px;
+  }
 }
 
 .slogan {
@@ -52,6 +74,10 @@
   line-height: 1.2;
   font-weight: 700;
   max-width: 270px;
+
+  @media (max-width: 850px) {
+    font-size: 24px;
+  }
 }
 
 .contactLinks {
@@ -63,14 +89,19 @@
   font-size: 16px;
   font-weight: 500;
 
-  > a > div  {
+  @media (max-width: 850px) {
+    gap: 10px;
+    margin-right: 10px;
+  }
+
+  > a > div {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: all 0.2s;
-    
+
     &:hover {
-      text-decoration-color: black
+      text-decoration-color: black;
     }
   }
 }
@@ -81,15 +112,20 @@
   gap: 30px;
   flex-wrap: wrap;
 
+  @media (max-width: 850px) {
+    margin-bottom: 50px;
+    font-size: 18px;
+    gap: 10px;
+  }
 
-  > a > div  {
+  > a > div {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: all 0.2s;
-    
+
     &:hover {
-      text-decoration-color: black
+      text-decoration-color: black;
     }
   }
 }

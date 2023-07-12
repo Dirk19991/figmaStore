@@ -17,6 +17,8 @@ function Footer() {
   const socialLinksRef = useRef(null);
   const socialLinksInView = useInView(socialLinksRef);
 
+  console.log(socialLinksInView);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
@@ -52,14 +54,12 @@ function Footer() {
                 transition: 'all 0.5s 0.6s',
               }}
             >
-                 <Link href={'https://store.figma.com/pages/privacy-policy'}>
-                 <div>Privacy & Terms</div>
-            </Link>
-            <Link href={'/about/#contact'}>
-            <div>Contact Us</div>
-            </Link>
-           
-             
+              <Link href={'https://store.figma.com/pages/privacy-policy'}>
+                <div>Privacy & Terms</div>
+              </Link>
+              <Link href={'/about/#contact'}>
+                <div>Contact Us</div>
+              </Link>
             </div>
           </div>
           <div
@@ -71,16 +71,16 @@ function Footer() {
             }}
           >
             <Link href={'https://figma.com/'}>
-            <div>FIGMA</div>
+              <div>FIGMA</div>
             </Link>
             <Link href={'https://twitter.com/figma'}>
-            <div>TWITTER</div>
+              <div>TWITTER</div>
             </Link>
             <Link href={'https://www.instagram.com/figma'}>
-            <div>INSTAGRAM</div>
+              <div>INSTAGRAM</div>
             </Link>
             <Link href={'https://www.youtube.com/c/Figmadesign'}>
-            <div>YOUTUBE</div>
+              <div>YOUTUBE</div>
             </Link>
           </div>
         </div>

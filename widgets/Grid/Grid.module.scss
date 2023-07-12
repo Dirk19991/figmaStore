@@ -2,11 +2,14 @@
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 850px) {
+    min-width: 300px;
+  }
 }
 
 .content {
@@ -17,6 +20,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
+
+  @media (max-width: 850px) {
+    min-width: 300px;
+  }
 }
 
 .titlePriceContainer {

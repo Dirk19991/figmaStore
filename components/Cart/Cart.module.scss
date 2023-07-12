@@ -53,6 +53,8 @@
 .subtotal {
   width: 150px;
   font-size: 18px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .table {
@@ -130,7 +132,7 @@
 
 .total {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 150px;
   gap: 20px;
 }
@@ -139,8 +141,8 @@
   background-color: black;
   color: white;
   border-radius: 30px;
-  padding: 10px 30px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.2s;
 
