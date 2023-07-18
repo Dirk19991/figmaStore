@@ -39,11 +39,11 @@ function CustomerCare() {
         <p className={styles.paragraph}>
           We currently do not accept returns and are unable to edit your order
           once placed. If you would like to cancel your order and replace it
-          with a new one before it has shipped, please connect with
-          thefigmastore@figma.com.
+          with a new one before it has shipped, please connect with{' '}
+          <a href='mailto:thefigmastore@figma.com'>thefigmastore@figma.com</a>.
         </p>
 
-        <div id="contact" className={styles.smallHeader}>
+        <div id='contact' className={styles.smallHeader}>
           <div>
             <img
               src='/icons/aboutIcons/greenDoubleOval.png'
@@ -52,9 +52,10 @@ function CustomerCare() {
           </div>
           <h4>Contact Us</h4>
         </div>
-        <p className={styles.paragraph}>
-          You can contact support by emailing thefigmastore@figma.com.
-        </p>
+        <address className={styles.paragraph}>
+          You can contact support by emailing{' '}
+          <a href='mailto:thefigmastore@figma.com'>thefigmastore@figma.com</a>.
+        </address>
       </div>
     </div>
   );

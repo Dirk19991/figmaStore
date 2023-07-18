@@ -1,0 +1,109 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-color: var(--yellow);
+}
+
+.wrapper {
+  margin: 0 auto;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+
+  > img {
+    padding: 5px;
+    height: 25px;
+    width: auto;
+  }
+}
+.pointer {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  > img {
+    padding: 5px;
+    height: 38px;
+    width: auto;
+  }
+}
+
+.cart {
+  margin-right: 10px;
+  min-width: 50px;
+}
+
+.linksWrapper {
+  display: flex;
+  gap: 5px;
+  padding: 0 20px;
+}
+
+.link {
+  font-size: 18px;
+  border: 1.5px solid black;
+  border-radius: 25px;
+  font-weight: 700;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: black;
+    color: var(--yellow);
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.select {
+  position: absolute;
+  width: 250px;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 15px;
+  background-color: white;
+  border: 1.5px solid black;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  > option {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+}

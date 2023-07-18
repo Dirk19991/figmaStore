@@ -17,8 +17,6 @@ function Footer() {
   const socialLinksRef = useRef(null);
   const socialLinksInView = useInView(socialLinksRef);
 
-  console.log(socialLinksInView);
-
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>

@@ -4,6 +4,10 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 80px;
+  @media (max-width: 850px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
 .bigHeader {
@@ -52,4 +56,15 @@
   font-size: 20px;
   line-height: 26px;
   margin-top: 15px;
+
+  > a {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      text-decoration-color: black;
+    }
+  }
 }

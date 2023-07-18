@@ -24,9 +24,9 @@ function ProductButtons({ amount, setAmount }: ProductButtonsProps) {
 
   return (
     <div className={styles.wrapper}>
-      <PlusButton increaseItems={increaseItems} />
-      <div className={styles.amount}>{amount}</div>
       <MinusButton decreaseItems={decreaseItems} />
+      <div className={styles.amount}>{amount}</div>
+      <PlusButton increaseItems={increaseItems} />
     </div>
   );
 }

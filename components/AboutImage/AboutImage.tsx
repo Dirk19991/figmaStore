@@ -1,7 +1,16 @@
+import { useMediaQuery } from 'shared/hooks/useMediaQuery';
+
 function AboutImage() {
+  const isDesktop = useMediaQuery('(min-width: 850px)');
+
   return (
     <div>
-      <svg width='550' height='550' viewBox='0 0 650 650' fill='none'>
+      <svg
+        width={isDesktop ? '550' : '90%'}
+        height={isDesktop ? '550' : '90%'}
+        viewBox='0 0 650 650'
+        fill='none'
+      >
         <defs>
           <pattern id='1' patternUnits='objectBoundingBox' width='1' height='1'>
             <image

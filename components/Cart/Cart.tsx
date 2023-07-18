@@ -83,7 +83,7 @@ function CartComponent({ data }: AllProducts) {
       <div className={styles.thinLine} />
       <div className={styles.table}>
         {items.map((item) => {
-          return <CartRow data={data} item={item} />;
+          return <CartRow key={item.id} data={data} item={item} />;
         })}
       </div>
       <div className={styles.totalCheckoutWrapper}>

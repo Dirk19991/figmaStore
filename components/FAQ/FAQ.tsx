@@ -66,7 +66,8 @@ function FAQ() {
         </div>
         <p className={styles.paragraph}>
           You are unable to edit your order once placed, but if you would like
-          to cancel it, please connect with thefigmastore@figma.com.
+          to cancel it, please connect with{' '}
+          <a href='mailto:thefigmastore@figma.com'>thefigmastore@figma.com</a>.
         </p>
 
         <div className={styles.smallHeader}>
@@ -76,7 +77,8 @@ function FAQ() {
           <h4>How do I contact support?</h4>
         </div>
         <p className={styles.paragraph}>
-          You can contact support by e-mailing thefigmastore@figma.com
+          You can contact support by e-mailing{' '}
+          <a href='mailto:thefigmastore@figma.com'>thefigmastore@figma.com</a>.
         </p>
       </div>
     </div>
