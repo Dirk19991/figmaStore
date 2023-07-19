@@ -41,6 +41,10 @@ body {
   position: relative;
 }
 
+* {
+  line-height: normal;
+}
+
 a {
   all: unset;
 }
