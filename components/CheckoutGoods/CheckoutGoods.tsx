@@ -1,10 +1,16 @@
 import CheckoutRow from 'components/CheckoutRow/CheckoutRow';
 import { useCartContext } from 'context/CartContextProvider';
 import { useCountryContext } from 'context/CountryContextProvider';
-import { ChangeEventHandler, FormEventHandler, useState } from 'react';
+import {
+  ChangeEventHandler,
+  FormEventHandler,
+  useEffect,
+  useState,
+} from 'react';
 import findById from 'shared/utils/findById';
 import styles from './CheckoutGoods.module.scss';
 import cn from 'classnames';
+import { useMediaQuery } from 'shared/hooks/useMediaQuery';
 
 const CheckoutGoods = ({ data }: AllProducts) => {
   const { items } = useCartContext();
@@ -15,6 +21,13 @@ const CheckoutGoods = ({ data }: AllProducts) => {
     'idle'
   );
   const giftCodes = ['gift'];
+
+  const isDesktop = useMediaQuery('(min-width: 850px)');
+
+  const [showDesktop, setShowDesktop] = useState(false);
+  useEffect(() => {
+    setShowDesktop(isDesktop);
+  }, [isDesktop]);
 
   const giftFormHandler: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();

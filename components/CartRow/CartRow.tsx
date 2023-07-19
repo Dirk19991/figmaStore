@@ -6,6 +6,8 @@ import Link from 'next/link';
 import findById from 'shared/utils/findById';
 import styles from './CartRow.module.scss';
 import Image from 'next/image';
+import { useMediaQuery } from 'shared/hooks/useMediaQuery';
+import { useEffect, useState } from 'react';
 
 interface CartRowProps {
   item: Item;
@@ -32,6 +34,13 @@ const CartRow = ({ item, data }: CartRowProps) => {
   const currentPrice = currentItem ? currentItem[prices[country].label] : null;
 
   const formattedName = currentItem?.title.replaceAll(' ', '-').toLowerCase();
+
+  const isDesktop = useMediaQuery('(min-width: 850px)');
+
+  const [showDesktop, setShowDesktop] = useState(false);
+  useEffect(() => {
+    setShowDesktop(isDesktop);
+  }, [isDesktop]);
 
   return (
     <>

@@ -3,6 +3,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
 }
 
 .content {
@@ -14,10 +18,18 @@
   width: 550px;
   max-width: 80%;
   font-size: 16px;
+  line-height: normal;
   align-self: flex-end;
 
   > * {
     flex-shrink: 2;
+  }
+
+  @media (max-width: 850px) {
+    padding-right: 20px;
+    padding-left: 40px;
+    max-width: 100%;
+    width: 850px;
   }
 }
 
@@ -39,6 +51,12 @@
   position: relative;
 }
 
+.nameWrapper {
+  @media (max-width: 850px) {
+    width: 50%;
+  }
+}
+
 .input {
   font-size: 16px;
   width: 100%;
@@ -47,6 +65,10 @@
   border-radius: 5px;
   padding: 10px;
   border: 2px solid rgba(128, 128, 128, 0.37);
+
+  @media (max-width: 850px) {
+    max-width: 850px;
+  }
 
   &:focus {
     outline: none;
@@ -71,10 +93,16 @@
 
 .firstNameInput {
   max-width: 220px;
+  @media (max-width: 850px) {
+    max-width: 420px;
+  }
 }
 
 .lastNameInput {
   max-width: 220px;
+  @media (max-width: 850px) {
+    max-width: 420px;
+  }
 }
 
 .placeOrderWrapper {

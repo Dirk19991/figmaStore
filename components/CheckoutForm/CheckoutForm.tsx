@@ -3,7 +3,10 @@ import styles from './CheckoutForm.module.scss';
 import cn from 'classnames';
 import USAStates from 'shared/data/USAStates';
 import UKCounties from 'shared/data/UKCounties';
-import { useCountryContext } from 'context/CountryContextProvider';
+import {
+  AvailableCountries,
+  useCountryContext,
+} from 'context/CountryContextProvider';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import router from 'next/router';
@@ -11,7 +14,7 @@ import { useCartContext } from 'context/CartContextProvider';
 
 const COUNTRIES = ['UNITED STATES', 'UNITED KINGDOM'] as const;
 
-type Country = typeof COUNTRIES[number];
+type Country = (typeof COUNTRIES)[number];
 type Values = {
   [K in Country]: string;
 };
@@ -60,8 +63,6 @@ const CheckoutForm = () => {
     }
   };
 
-  console.log(errors);
-
   return (
     <div className={styles.wrapper}>
       <form
@@ -92,6 +93,7 @@ const CheckoutForm = () => {
           className={cn(styles.input, styles.countrySelect, styles.bottom20)}
           name='country'
           id='country'
+          onChange={(e) => setCountry(e.target.value as AvailableCountries)}
         >
           {COUNTRIES.map((elem) => (
             <option value={elem}>{VALUES[elem]}</option>
@@ -111,7 +113,7 @@ const CheckoutForm = () => {
             UKCounties.map((elem) => <option value={elem}>{elem}</option>)}
         </select>
         <div className={cn(styles.name, styles.bottom20)}>
-          <div className={cn(styles.inputWrapper)}>
+          <div className={cn(styles.inputWrapper, styles.nameWrapper)}>
             <input
               {...register('firstName', { required: true })}
               className={cn(styles.input, styles.firstNameInput)}
@@ -122,7 +124,7 @@ const CheckoutForm = () => {
               {errors?.firstName && 'Mandatory field'}
             </div>
           </div>
-          <div className={cn(styles.inputWrapper)}>
+          <div className={cn(styles.inputWrapper, styles.nameWrapper)}>
             <input
               {...register('lastName', { required: true })}
               className={cn(styles.input, styles.lastNameInput)}
