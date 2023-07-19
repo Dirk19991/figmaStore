@@ -1,13 +1,19 @@
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'shared/hooks/useMediaQuery';
 
 function AboutImage() {
   const isDesktop = useMediaQuery('(min-width: 850px)');
 
+  const [showDesktop, setShowDesktop] = useState(false);
+  useEffect(() => {
+    setShowDesktop(isDesktop);
+  }, [isDesktop]);
+
   return (
     <div>
       <svg
-        width={isDesktop ? '550' : '90%'}
-        height={isDesktop ? '550' : '90%'}
+        width={showDesktop ? '550' : '90%'}
+        height={showDesktop ? '550' : '90%'}
         viewBox='0 0 650 650'
         fill='none'
       >

@@ -1,21 +1,22 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
+import styled from 'styled-components';
 
-function AsianMan() {
+function AsianMan({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/rainbow-logo-tee'>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Rainbow logo tee
+      </div>
 
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Rainbow logo tee
-        </div>
- 
       <svg width='650' height='650' viewBox='-2 -2 654 654' fill='none'>
         <defs>
           <pattern id='5' patternUnits='objectBoundingBox' width='1' height='1'>

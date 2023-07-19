@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
 
-function Socks() {
+function Socks({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/light-grey-comment-socks'>
-  
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Light grey comment socks
-        </div>
-  
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Light grey comment socks
+      </div>
+
       <svg width='658' height='658' viewBox='-2 -2 654 654' fill='none'>
         <defs>
           <pattern id='7' patternUnits='objectBoundingBox' width='1' height='1'>

@@ -1,20 +1,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
 
-function TShirt() {
+function TShirt({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/figma-wordmark-tee'>
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Figma wordmark tee
-        </div>
-    
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Figma wordmark tee
+      </div>
+
       <svg width='650' height='650' viewBox='0 0 650 650' fill='none'>
         <defs>
           <pattern id='8' patternUnits='objectBoundingBox' width='1' height='1'>

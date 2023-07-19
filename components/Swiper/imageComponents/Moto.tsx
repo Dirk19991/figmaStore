@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
 
-function Moto() {
+function Moto({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/blue-figma-hat'>
-   
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Blue Figma hat
-        </div>
-   
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Blue Figma hat
+      </div>
+
       <svg width='650' height='648' viewBox='0 0 650 648' fill='none'>
         <defs>
           <pattern id='6' patternUnits='objectBoundingBox' width='1' height='1'>

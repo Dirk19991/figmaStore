@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
 
-function Bottle() {
+function Bottle({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/bezier-water-bottle'>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Bezier water bottle
+      </div>
 
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Bezier water bottle
-        </div>
-  
       <svg width='650' height='650' viewBox='0 0 650 650' fill='none'>
         <defs>
           <pattern id='2' patternUnits='objectBoundingBox' width='1' height='1'>

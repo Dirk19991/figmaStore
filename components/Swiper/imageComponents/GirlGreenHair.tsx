@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from './Styles.module.scss';
+import cn from 'classnames';
 
-function GirlGreenHair() {
+function GirlGreenHair({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Link href='/products/figma-hoodie'>
-   
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={hovered ? styles.hovered : styles.invisible}
-        >
-          Figma hoodie
-        </div>
- 
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={cn(hovered && isDesktop ? styles.hovered : styles.invisible)}
+      >
+        Figma hoodie
+      </div>
+
       <svg width='650' height='648' viewBox='0 0 650 648' fill='none'>
         <defs>
           <pattern id='4' patternUnits='objectBoundingBox' width='1' height='1'>

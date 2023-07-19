@@ -37,3 +37,7 @@ interface Prices {
     sign: '£';
   };
 }
+
+interface ImageProps {
+  isDesktop: boolean;
+}

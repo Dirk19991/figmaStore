@@ -4,6 +4,19 @@
   background-color: var(--yellow);
 }
 
+.white {
+  background-color: white;
+}
+
+.mobileMenu {
+  position: absolute;
+  background-color: white;
+  height: calc(100vh - 70px);
+  width: 100%;
+  top: 70px;
+  z-index: 100;
+}
+
 .wrapper {
   margin: 0 auto;
   height: 70px;
@@ -13,9 +26,9 @@
 }
 
 .burger {
-  width: 38px;
-  min-width: 38px;
-  height: 38px;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,12 +37,11 @@
   border: 2px solid black;
   cursor: pointer;
 
-  > img {
-    padding: 5px;
-    height: 25px;
-    width: auto;
+  > div {
+    min-width: 48px;
   }
 }
+
 .pointer {
   width: 38px;
   min-width: 38px;
@@ -51,12 +63,6 @@
   min-width: 50px;
 }
 
-.linksWrapper {
-  display: flex;
-  gap: 5px;
-  padding: 0 20px;
-}
-
 .link {
   font-size: 18px;
   border: 1.5px solid black;
@@ -73,6 +79,29 @@
     background-color: black;
     color: var(--yellow);
   }
+}
+
+.linksWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: 10px;
+  gap: 30px;
+  font-weight: 700;
+}
+
+.bigLink {
+  font-size: 36px;
+}
+
+.smallLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.smallLink {
+  font-size: 24px;
 }
 
 .logo {

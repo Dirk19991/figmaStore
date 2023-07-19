@@ -11,6 +11,9 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { Squash as Hamburger } from 'hamburger-react';
+import cn from 'classnames';
+import { useRouter } from 'next/router';
 
 function MobileHeader() {
   const { country, setCountry } = useCountryContext();
@@ -19,6 +22,33 @@ function MobileHeader() {
   cart.items.forEach((elem: Item) => (currentItems += elem.quantity));
 
   const [selectOpened, setSelectOpened] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  function scrollHandler() {
+    setScrollY(window.pageYOffset);
+    setMenuOpened(false);
+  }
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener('scroll', scrollHandler);
+    }
+    watchScroll();
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  });
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => setMenuOpened(false));
+
+    return () => {
+      router.events.off('routeChangeComplete', () => setMenuOpened(false));
+    };
+  }, [router]);
 
   const selectClickHandler: MouseEventHandler<HTMLSelectElement> = (e) => {
     if (e.detail === 0) {
@@ -32,10 +62,33 @@ function MobileHeader() {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={cn(styles.header, menuOpened && styles.white)}>
+      {menuOpened && (
+        <div className={styles.mobileMenu}>
+          <div className={styles.linksWrapper}>
+            <Link className={styles.bigLink} href='/'>
+              SHOP
+            </Link>
+            <Link className={styles.bigLink} href='/about'>
+              ABOUT
+            </Link>
+            <div className={styles.smallLinks}>
+              <Link
+                className={styles.smallLink}
+                href={'https://store.figma.com/pages/privacy-policy'}
+              >
+                Privacy & Terms
+              </Link>
+              <Link className={styles.smallLink} href={'/about/#contact'}>
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
       <div className={styles.wrapper}>
         <div className={styles.burger}>
-          <img src='./icons/burger.svg' alt='burger' />
+          <Hamburger size={20} toggled={menuOpened} toggle={setMenuOpened} />
         </div>
 
         <div className={styles.logo}>THE FIGMA STORE</div>
