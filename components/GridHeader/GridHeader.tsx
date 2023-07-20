@@ -38,6 +38,7 @@ function GridHeader() {
         </span>{' '}
         FRIENDS
       </h2>
+      <button className={styles.button}>1</button>
     </>
   );
 }
