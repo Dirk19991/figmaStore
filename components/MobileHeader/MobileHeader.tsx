@@ -103,6 +103,7 @@ function MobileHeader() {
             {currentItems}
           </Link>
         </div>
+        <button className={styles.button}>1</button>
       </div>
       {selectOpened && (
         <>
