@@ -23,3 +23,15 @@
     }
   }
 }
+
+.button {
+  border: 1.5px solid black;
+  border-radius: 25px;
+  width: 50px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 18px;
+}
