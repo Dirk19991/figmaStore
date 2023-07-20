@@ -60,14 +60,10 @@
 
 .cart {
   margin-right: 10px;
-  min-width: 50px;
-  min-height: 30px;
-}
-
-.link {
+  width: 50px;
+  height: 35px;
   font-size: 18px;
-  height: 30px;
-  line-height: 30px;
+  line-height: 35px;
   border: 1.5px solid black;
   border-radius: 25px;
   font-weight: 700;
@@ -76,11 +72,9 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.2s;
+}
 
-  &:hover {
-    background-color: black;
-    color: var(--yellow);
-  }
+.link {
 }
 
 .linksWrapper {
@@ -109,7 +103,8 @@
 .logo {
   font-weight: 700;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 18px;
+  align-self: center;
 }
 
 .select {
