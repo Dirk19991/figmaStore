@@ -62,16 +62,14 @@
   margin-right: 10px;
   min-width: 50px;
   min-height: 30px;
-  line-height: 18px;
 }
 
 .link {
   font-size: 18px;
-  line-height: 18px;
+  line-height: 30px;
   border: 1.5px solid black;
   border-radius: 25px;
   font-weight: 700;
-  padding: 5px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,6 +108,7 @@
 .logo {
   font-weight: 700;
   font-size: 18px;
+  line-height: 30px;
 }
 
 .select {
