@@ -74,6 +74,12 @@
   transition: all 0.2s;
 }
 
+.link {
+  @media (max-width: 850px) {
+    transform: translateY(3px);
+  }
+}
+
 .linksWrapper {
   display: flex;
   flex-direction: column;
@@ -101,7 +107,9 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 18px;
-  align-self: center;
+  @media (max-width: 850px) {
+    transform: translateY(3px);
+  }
 }
 
 .select {
