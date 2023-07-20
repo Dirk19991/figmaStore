@@ -39,10 +39,8 @@ body {
 
 body {
   position: relative;
-}
-
-* {
-  line-height: 1.21;
+  font-size: 100%;
+  line-height: 1.2;
 }
 
 a {
