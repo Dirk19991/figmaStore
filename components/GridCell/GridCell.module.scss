@@ -13,6 +13,12 @@
   background-size: cover;
   overflow: hidden;
   cursor: pointer;
+
+  @media (max-width: 850px) {
+    width: 150px;
+    height: 210px;
+    min-height: 210px;
+  }
 }
 
 .hover {
@@ -46,4 +52,10 @@
   background-size: 250px 350px;
   background-position: 0px 0px;
   transition: all 0.5s;
+
+  @media (max-width: 850px) {
+    height: 210px;
+    width: 150px;
+    background-size: 150px 210px;
+  }
 }

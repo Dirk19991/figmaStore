@@ -77,9 +77,6 @@
   @media (max-width: 850px) {
     transform: translateY(3px);
   }
-  @media screen {
-    transform: translateY(0px);
-  }
 }
 
 .linksWrapper {
@@ -112,9 +109,6 @@
   line-height: 30px;
   @media (max-width: 850px) {
     transform: translateY(3px);
-  }
-  @media screen {
-    transform: translateY(0px);
   }
 }
 
