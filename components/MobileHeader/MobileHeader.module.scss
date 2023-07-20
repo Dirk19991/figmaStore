@@ -74,6 +74,12 @@
 }
 
 .link {
+  @media (max-width: 850px) {
+    transform: translateY(3px);
+  }
+  @media screen {
+    transform: translateY(0px);
+  }
 }
 
 .linksWrapper {
@@ -104,6 +110,12 @@
   font-size: 18px;
   height: 30px;
   line-height: 30px;
+  @media (max-width: 850px) {
+    transform: translateY(3px);
+  }
+  @media screen {
+    transform: translateY(0px);
+  }
 }
 
 .select {
