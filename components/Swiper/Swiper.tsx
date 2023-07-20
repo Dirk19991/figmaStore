@@ -12,10 +12,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useMediaQuery } from 'shared/hooks/useMediaQuery';
 import { useEffect, useState } from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation } from 'swiper';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 function SwiperComponent() {
   const isDesktop = useMediaQuery('(min-width: 850px)');
@@ -29,7 +27,7 @@ function SwiperComponent() {
     <>
       <div className={styles.swiperWrapper}>
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation]}
           navigation={showDesktop ? true : false}
           spaceBetween={showDesktop ? 50 : 5}
           slidesPerView={showDesktop ? 3 : 2}
