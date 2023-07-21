@@ -59,6 +59,7 @@
 }
 
 .cart {
+  font-family: 'Courier New', Courier, monospace;
   margin-right: 10px;
   height: 35px;
   width: 50px;
@@ -79,9 +80,6 @@
   line-height: 18px;
   // fixing issue with mobile view - div content doesn't center
   @media (max-width: 850px) {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-    align-self: center;
   }
 }
 
