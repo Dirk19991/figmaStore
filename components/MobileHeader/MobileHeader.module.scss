@@ -59,13 +59,11 @@
 }
 
 .cart {
-  font-family: 'Courier New', Courier, monospace;
   margin-right: 10px;
   height: 35px;
   width: 50px;
   font-size: 18px;
   line-height: 35px;
-
   border: 1.5px solid black;
   border-radius: 25px;
   font-weight: 700;
@@ -74,13 +72,6 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.2s;
-}
-
-.link {
-  line-height: 18px;
-  // fixing issue with mobile view - div content doesn't center
-  @media (max-width: 850px) {
-  }
 }
 
 .linksWrapper {
@@ -111,11 +102,6 @@
   font-size: 18px;
   height: 30px;
   line-height: 30px;
-
-  // fixing issue with mobile view - div content doesn't center
-  @media (max-width: 850px) {
-    transform: translateY(3px);
-  }
 }
 
 .select {
