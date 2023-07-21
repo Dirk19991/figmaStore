@@ -43,7 +43,7 @@
   }
 
   > :first-child {
-    transform: rotate(90deg);
+    transform: translateX(-3px) rotate(90deg);
     margin-bottom: 20px;
   }
 }
