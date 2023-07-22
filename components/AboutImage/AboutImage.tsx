@@ -12,8 +12,8 @@ function AboutImage() {
   return (
     <div>
       <svg
-        width={showDesktop ? '550' : '90%'}
-        height={showDesktop ? '550' : '90%'}
+        width={showDesktop ? '550' : '100%'}
+        height={showDesktop ? '550' : '100%'}
         viewBox='0 0 650 650'
         fill='none'
       >
