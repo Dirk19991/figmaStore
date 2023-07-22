@@ -46,12 +46,15 @@ const CartRow = ({ item, data }: CartRowProps) => {
     <>
       <div className={styles.tableRow} key={item.id}>
         <h3 className={styles.item}>
-          <button
-            onClick={() => removeItem(item.id)}
-            className={styles.removeButton}
-          >
-            X
-          </button>
+          {showDesktop && (
+            <button
+              onClick={() => removeItem(item.id)}
+              className={styles.removeButton}
+            >
+              X
+            </button>
+          )}
+
           <Link href={`/products/${formattedName}`}>
             <div className={styles.image}>
               <Image
@@ -65,18 +68,58 @@ const CartRow = ({ item, data }: CartRowProps) => {
 
           <div>{currentItem ? currentItem.title : 'loading'}</div>
         </h3>
-        <div className={styles.price}>
-          {data ? `${sign}${currentPrice}` : 'loading'}
-        </div>
-        <div className={styles.quantity}>
-          <MinusButton decreaseItems={() => decreaseItems(item.id)} />
-          <div>{item.quantity}</div>
-          <PlusButton increaseItems={() => addItem(item.id, 1)} />
-        </div>
-        <div className={styles.subtotal}>
-          {data ? `${sign}${item.quantity * (currentPrice || 0)}` : 'loading'}
+        {showDesktop && (
+          <div className={styles.price}>
+            {data ? `${sign}${currentPrice}` : 'loading'}
+          </div>
+        )}
+
+        {showDesktop && (
+          <div className={styles.quantity}>
+            <MinusButton decreaseItems={() => decreaseItems(item.id)} />
+            <div>{item.quantity}</div>
+            <PlusButton increaseItems={() => addItem(item.id, 1)} />
+          </div>
+        )}
+
+        {showDesktop && (
+          <div className={styles.subtotal}>
+            {data ? `${sign}${item.quantity * (currentPrice || 0)}` : 'loading'}
+          </div>
+        )}
+        {!showDesktop && (
+          <button
+            onClick={() => removeItem(item.id)}
+            className={styles.removeButton}
+          >
+            X
+          </button>
+        )}
+      </div>
+      <div className={styles.mobilePriceQuantity}>
+        {!showDesktop && (
+          <div className={styles.quantity}>
+            <MinusButton decreaseItems={() => decreaseItems(item.id)} />
+            <div>{item.quantity}</div>
+            <PlusButton increaseItems={() => addItem(item.id, 1)} />
+          </div>
+        )}
+        <div className={styles.mobilePriceWrapper}>
+          {!showDesktop && (
+            <div className={styles.mobilePrice}>
+              {data ? `${sign}${currentPrice}` : 'loading'}
+            </div>
+          )}
+          {!showDesktop && (
+            <div className={styles.mobileSubtotal}>
+              {data
+                ? `${sign}${item.quantity * (currentPrice || 0)}`
+                : 'loading'}
+            </div>
+          )}
         </div>
       </div>
+
       <div className={styles.thinLine} />
     </>
   );

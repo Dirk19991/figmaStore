@@ -56,6 +56,10 @@ function MobileHeader() {
     }
   };
 
+  const closeButtonHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
+    setSelectOpened(false);
+  };
+
   const selectChangeHandler: ChangeEventHandler<HTMLSelectElement> = (e) => {
     setCountry(e.target.value as AvailableCountries);
     setSelectOpened(false);
@@ -105,7 +109,7 @@ function MobileHeader() {
         </div>
       </div>
       {selectOpened && (
-        <>
+        <div className={styles.selectWrapper}>
           <select
             onClick={selectClickHandler}
             onChange={selectChangeHandler}
@@ -115,7 +119,13 @@ function MobileHeader() {
             <option value='UNITED STATES'>UNITED STATES</option>
             <option value='UNITED KINGDOM'>UNITED KINGDOM</option>
           </select>
-        </>
+          <button
+            onClick={closeButtonHandler}
+            className={styles.selectCloseButton}
+          >
+            X
+          </button>
+        </div>
       )}
     </header>
   );

@@ -24,6 +24,7 @@
 .tableHeader {
   display: flex;
   justify-content: space-between;
+  margin-bottom: -20px;
 
   > div {
     font-size: 26px;
@@ -154,9 +155,9 @@
 .thanks {
   font-size: 48px;
   font-weight: 700;
-  line-height: 32px;
   margin: 0 auto;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .continue {

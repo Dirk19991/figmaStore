@@ -5,7 +5,8 @@ import findById from '../../shared/utils/findById';
 import Link from 'next/link';
 import CartRow from 'components/CartRow/CartRow';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'shared/hooks/useMediaQuery';
 
 interface Prices {
   'UNITED STATES': {
@@ -22,6 +23,13 @@ function CartComponent({ data }: AllProducts) {
   const { items, removeItem, ordered, setOrdered } = useCartContext();
   const { country } = useCountryContext();
   const router = useRouter();
+
+  const isDesktop = useMediaQuery('(min-width: 850px)');
+
+  const [showDesktop, setShowDesktop] = useState(false);
+  useEffect(() => {
+    setShowDesktop(isDesktop);
+  }, [isDesktop]);
 
   const prices: Prices = {
     'UNITED STATES': {
@@ -76,9 +84,9 @@ function CartComponent({ data }: AllProducts) {
       <div className={styles.line} />
       <div className={styles.tableHeader}>
         <h3 className={styles.item}>Item</h3>
-        <div className={styles.price}>Price</div>
-        <div className={styles.quantity}>Qty</div>
-        <div className={styles.subtotal}>Subtotal</div>
+        {showDesktop && <h3 className={styles.price}>Price</h3>}
+        {showDesktop && <h3 className={styles.quantity}>Qty</h3>}
+        {showDesktop && <h3 className={styles.subtotal}>Subtotal</h3>}
       </div>
       <div className={styles.thinLine} />
       <div className={styles.table}>
