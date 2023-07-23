@@ -11,7 +11,9 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
+       env:
+    MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v5
         with:
-          build: cp .env.local .env && npm run build
+          build: npm run build
           start: npm start
