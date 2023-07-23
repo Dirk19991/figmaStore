@@ -100,10 +100,14 @@ const CheckoutGoods = ({ data }: AllProducts) => {
             Apply
           </button>
           {codeStatus === 'active' && (
-            <div className={styles.applied}>Code applied!</div>
+            <div className={styles.applied} data-cy='applied'>
+              Code applied!
+            </div>
           )}
           {codeStatus === 'rejected' && (
-            <div className={styles.rejected}>Incorrect code!</div>
+            <div className={styles.rejected} data-cy='incorrect'>
+              Incorrect code!
+            </div>
           )}
         </form>
 

@@ -23,8 +23,6 @@ function Product({ data }: ProductProps) {
     setShowDesktop(isDesktop);
   }, [isDesktop]);
 
-  console.log(data);
-
   return showDesktop ? (
     <div className={styles.wrapper}>
       <ProductCarousel

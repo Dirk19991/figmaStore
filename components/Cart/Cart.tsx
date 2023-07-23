@@ -91,13 +91,13 @@ function CartComponent({ data }: AllProducts) {
         {showDesktop && <h3 className={styles.subtotal}>Subtotal</h3>}
       </div>
       <div className={styles.thinLine} />
-      <div className={styles.table}>
+      <div className={styles.table} data-cy='table'>
         {items.map((item) => {
           return <CartRow key={item.id} data={data} item={item} />;
         })}
       </div>
       <div className={styles.totalCheckoutWrapper}>
-        <div data-cy='total' className={styles.total}>
+        <div className={styles.total} data-cy='total'>
           <div>Total:</div>
           <div>
             {prices[country].sign}

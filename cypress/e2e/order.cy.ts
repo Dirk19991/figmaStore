@@ -1,5 +1,5 @@
-describe('Order the goods', () => {
-  it('Order the goods', () => {
+describe('Testing ordering the goods', () => {
+  it('the order can be placed correctly', () => {
     // ordering first item, quantity: 3, subtotal: 60
     cy.visit('http://localhost:3000');
     cy.get('[data-cy="blue-figma-hat"]').click();

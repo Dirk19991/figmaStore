@@ -20,7 +20,7 @@ function Grid({ data }: AllProducts) {
             <GridCell elem={elem}></GridCell>
             <div className={styles.titlePriceContainer}>
               <div className={styles.title}>{elem.title}</div>
-              <div className={styles.price}>
+              <div data-cy='price' className={styles.price}>
                 {country === 'UNITED STATES'
                   ? `$${elem.priceUS}`
                   : `£${elem.priceUK}`}

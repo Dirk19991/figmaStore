@@ -72,7 +72,6 @@ const CheckoutForm = () => {
         <div className={styles.header}>Contact</div>
         <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
-            data-cy='email'
             className={styles.input}
             {...register('email', {
               required: true,
@@ -80,15 +79,15 @@ const CheckoutForm = () => {
             })}
             placeholder='Email'
             type='text'
+            data-cy='email'
           />
-          <div className={styles.error}>
+          <div data-cy='email-error' className={styles.error}>
             {errors?.email && 'Please enter email in correct format'}
           </div>
         </div>
 
         <div className={styles.header}>Shipping address</div>
         <select
-          data-cy='country'
           {...register('country', {
             required: true,
           })}
@@ -96,19 +95,20 @@ const CheckoutForm = () => {
           name='country'
           id='country'
           onChange={(e) => setCountry(e.target.value as AvailableCountries)}
+          data-cy='country'
         >
           {COUNTRIES.map((elem) => (
             <option value={elem}>{VALUES[elem]}</option>
           ))}
         </select>
         <select
-          data-cy='state'
           {...register('state', {
             required: true,
           })}
           className={cn(styles.input, styles.stateSelect, styles.bottom20)}
           name='state'
           id='state'
+          data-cy='state'
         >
           {country === 'UNITED STATES' &&
             USAStates.map((elem) => <option value={elem}>{elem}</option>)}
@@ -124,7 +124,7 @@ const CheckoutForm = () => {
               placeholder='First name'
               type='text'
             />
-            <div className={styles.error}>
+            <div className={styles.error} data-cy='first-name-error'>
               {errors?.firstName && 'Mandatory field'}
             </div>
           </div>
@@ -136,7 +136,7 @@ const CheckoutForm = () => {
               placeholder='Last name'
               type='text'
             />
-            <div className={styles.error}>
+            <div className={styles.error} data-cy='last-name-error'>
               {errors?.lastName && 'Mandatory field'}
             </div>
           </div>
@@ -149,7 +149,7 @@ const CheckoutForm = () => {
             placeholder='City'
             type='text'
           />
-          <div className={styles.error}>
+          <div className={styles.error} data-cy='city-error'>
             {errors?.city && 'Mandatory field'}
           </div>
         </div>
@@ -161,7 +161,7 @@ const CheckoutForm = () => {
             placeholder='Address'
             type='text'
           />
-          <div className={styles.error}>
+          <div className={styles.error} data-cy='address-error'>
             {errors?.address && 'Mandatory field'}
           </div>
         </div>
@@ -173,7 +173,7 @@ const CheckoutForm = () => {
             placeholder='Postal code'
             type='text'
           />
-          <div className={styles.error}>
+          <div className={styles.error} data-cy='postal-code-error'>
             {errors?.postalCode?.type === 'required' && 'Mandatory field'}
             {errors?.postalCode?.type === 'pattern' &&
               'Postal code can only contain numbers'}

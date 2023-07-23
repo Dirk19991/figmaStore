@@ -7,7 +7,6 @@ interface ProductSwiperProps {
 }
 
 const ProductSwiper = ({ productInfo }: ProductSwiperProps) => {
-  console.log(productInfo);
   return (
     <div className={styles.swiperWrapper}>
       <Swiper slidesPerView={1.5} spaceBetween={5}>

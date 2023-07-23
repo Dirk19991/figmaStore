@@ -8,7 +8,7 @@ interface GridCellProps {
 
 function GridCell({ elem }: GridCellProps) {
   const [hovered, setHovered] = useState(false);
-  console.log(elem.id);
+
   return (
     <div
       data-cy={`item-${elem.id}`}

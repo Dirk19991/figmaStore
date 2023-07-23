@@ -77,7 +77,7 @@ const CartRow = ({ item, data }: CartRowProps) => {
         {showDesktop && (
           <div className={styles.quantity}>
             <MinusButton decreaseItems={() => decreaseItems(item.id)} />
-            <div>{item.quantity}</div>
+            <div data-cy='cart-quantity'>{item.quantity}</div>
             <PlusButton increaseItems={() => addItem(item.id, 1)} />
           </div>
         )}

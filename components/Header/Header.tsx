@@ -26,6 +26,7 @@ function Header() {
         <div className={styles.logo}>THE FIGMA STORE</div>
         <div className={styles.linksWrapper}>
           <select
+            data-cy='country-select'
             className={styles.select}
             onChange={(e) => setCountry(e.target.value as AvailableCountries)}
             defaultValue={country}
