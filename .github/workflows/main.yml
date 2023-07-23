@@ -4,8 +4,6 @@ on: push
 
 jobs:
   cypress-run:
-    env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -14,6 +12,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         with:
           build: npm run build
           start: npm start
