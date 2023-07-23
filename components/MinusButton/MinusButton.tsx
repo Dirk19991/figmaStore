@@ -6,7 +6,11 @@ interface MinusButtonsProps {
 
 const MinusButton = ({ decreaseItems }: MinusButtonsProps) => {
   return (
-    <button className={styles.minus} onClick={decreaseItems}>
+    <button
+      data-cy='minus-button'
+      className={styles.minus}
+      onClick={decreaseItems}
+    >
       <img src='/icons/minus.svg' alt='plus' />
     </button>
   );

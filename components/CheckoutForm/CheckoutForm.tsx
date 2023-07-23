@@ -14,7 +14,7 @@ import { useCartContext } from 'context/CartContextProvider';
 
 const COUNTRIES = ['UNITED STATES', 'UNITED KINGDOM'] as const;
 
-type Country = (typeof COUNTRIES)[number];
+type Country = typeof COUNTRIES[number];
 type Values = {
   [K in Country]: string;
 };
@@ -72,6 +72,7 @@ const CheckoutForm = () => {
         <div className={styles.header}>Contact</div>
         <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
+            data-cy='email'
             className={styles.input}
             {...register('email', {
               required: true,
@@ -87,6 +88,7 @@ const CheckoutForm = () => {
 
         <div className={styles.header}>Shipping address</div>
         <select
+          data-cy='country'
           {...register('country', {
             required: true,
           })}
@@ -100,6 +102,7 @@ const CheckoutForm = () => {
           ))}
         </select>
         <select
+          data-cy='state'
           {...register('state', {
             required: true,
           })}
@@ -115,6 +118,7 @@ const CheckoutForm = () => {
         <div className={cn(styles.name, styles.bottom20)}>
           <div className={cn(styles.inputWrapper, styles.nameWrapper)}>
             <input
+              data-cy='first-name'
               {...register('firstName', { required: true })}
               className={cn(styles.input, styles.firstNameInput)}
               placeholder='First name'
@@ -126,6 +130,7 @@ const CheckoutForm = () => {
           </div>
           <div className={cn(styles.inputWrapper, styles.nameWrapper)}>
             <input
+              data-cy='last-name'
               {...register('lastName', { required: true })}
               className={cn(styles.input, styles.lastNameInput)}
               placeholder='Last name'
@@ -138,6 +143,7 @@ const CheckoutForm = () => {
         </div>
         <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
+            data-cy='city'
             {...register('city', { required: true })}
             className={cn(styles.input)}
             placeholder='City'
@@ -149,6 +155,7 @@ const CheckoutForm = () => {
         </div>
         <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
+            data-cy='address'
             {...register('address', { required: true })}
             className={cn(styles.input)}
             placeholder='Address'
@@ -160,6 +167,7 @@ const CheckoutForm = () => {
         </div>
         <div className={cn(styles.inputWrapper, styles.bottom20)}>
           <input
+            data-cy='postal-code'
             {...register('postalCode', { required: true, pattern: /^\d+$/ })}
             className={cn(styles.input)}
             placeholder='Postal code'
@@ -177,6 +185,7 @@ const CheckoutForm = () => {
           </Link>
 
           <input
+            data-cy='place-order'
             value={status === 'loading' ? 'Loading...' : 'Place order'}
             className={cn(styles.placeOrderButton)}
             disabled={!isValid}

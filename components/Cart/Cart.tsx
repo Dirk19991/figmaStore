@@ -68,8 +68,10 @@ function CartComponent({ data }: AllProducts) {
   if (ordered) {
     return (
       <div className={styles.wrapper}>
-        <h1 className={styles.thanks}>Thank you for your order!</h1>
-        <Link className={styles.continue} href={'/'}>
+        <h1 data-cy='thanks' className={styles.thanks}>
+          Thank you for your order!
+        </h1>
+        <Link data-cy='continue' className={styles.continue} href={'/'}>
           <h2>Continue shopping</h2>
         </Link>
       </div>
@@ -78,7 +80,7 @@ function CartComponent({ data }: AllProducts) {
 
   return (
     <div className={styles.wrapper}>
-      <h3>
+      <h3 data-cy='items-in-cart'>
         {items.length} {items.length === 1 ? 'item' : 'items'} in Cart
       </h3>
       <div className={styles.line} />
@@ -95,7 +97,7 @@ function CartComponent({ data }: AllProducts) {
         })}
       </div>
       <div className={styles.totalCheckoutWrapper}>
-        <div className={styles.total}>
+        <div data-cy='total' className={styles.total}>
           <div>Total:</div>
           <div>
             {prices[country].sign}
@@ -103,7 +105,7 @@ function CartComponent({ data }: AllProducts) {
           </div>
         </div>
         {items.length > 0 && (
-          <Link href={'/checkout'}>
+          <Link data-cy='checkout-link' href={'/checkout'}>
             <button className={styles.checkout}>CHECKOUT</button>
           </Link>
         )}

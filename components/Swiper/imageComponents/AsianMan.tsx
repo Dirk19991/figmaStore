@@ -8,7 +8,7 @@ function AsianMan({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href='/products/rainbow-logo-tee'>
+    <Link data-cy='rainbow-logo-tee' href='/products/rainbow-logo-tee'>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

@@ -8,9 +8,10 @@ interface GridCellProps {
 
 function GridCell({ elem }: GridCellProps) {
   const [hovered, setHovered] = useState(false);
-
+  console.log(elem.id);
   return (
     <div
+      data-cy={`item-${elem.id}`}
       className={styles.cell}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

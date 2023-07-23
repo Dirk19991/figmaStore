@@ -16,10 +16,10 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <div className={styles.linksWrapper}>
-          <Link className={styles.link} href='/'>
+          <Link data-cy='shop-link' className={styles.link} href='/'>
             SHOP
           </Link>
-          <Link className={styles.link} href='/about'>
+          <Link data-cy='about-link' className={styles.link} href='/about'>
             ABOUT
           </Link>
         </div>
@@ -33,7 +33,7 @@ function Header() {
             <option value='UNITED STATES'>UNITED STATES</option>
             <option value='UNITED KINGDOM'>UNITED KINGDOM</option>
           </select>
-          <Link className={styles.link} href='/cart'>
+          <Link data-cy='cart-link' className={styles.link} href='/cart'>
             CART {currentItems}
           </Link>
         </div>

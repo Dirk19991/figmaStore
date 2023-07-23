@@ -81,6 +81,7 @@ const CheckoutGoods = ({ data }: AllProducts) => {
         <div className={styles.line}></div>
         <form className={styles.giftForm} onSubmit={giftFormHandler}>
           <input
+            data-cy='gift-card'
             disabled={codeStatus === 'active' ? true : false}
             value={giftCardValue}
             onChange={giftInputHandler}
@@ -89,6 +90,7 @@ const CheckoutGoods = ({ data }: AllProducts) => {
             type='text'
           />
           <button
+            data-cy='apply'
             className={
               giftCardValue && !(codeStatus === 'active')
                 ? cn(styles.giftButton, styles.active)
@@ -121,7 +123,7 @@ const CheckoutGoods = ({ data }: AllProducts) => {
                 {prices[country].sign}
                 {sum}
               </div>
-              <div>
+              <div data-cy='discount-sum'>
                 {' '}
                 {prices[country].sign}
                 {(sum * discount).toFixed(0)}

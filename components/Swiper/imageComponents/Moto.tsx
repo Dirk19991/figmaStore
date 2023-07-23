@@ -7,7 +7,7 @@ function Moto({ isDesktop }: ImageProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href='/products/blue-figma-hat'>
+    <Link data-cy='blue-figma-hat' href='/products/blue-figma-hat'>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

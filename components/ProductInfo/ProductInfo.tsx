@@ -47,6 +47,7 @@ function Info({ data }: InfoProps) {
       {showDesktop && <ProductButtons amount={amount} setAmount={setAmount} />}
       {showDesktop && (
         <button
+          data-cy='add-button'
           className={styles.addButton}
           onClick={() => cart.addItem(data.id, amount)}
         >
