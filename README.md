@@ -26,7 +26,7 @@
 <img src="https://github.com/Dirk19991/figmaStore/assets/104031523/66c31fb3-35a5-42b3-8f23-4f50822e6fd0" alt="Alt text" title="Optional title" width=60% height=60%>
 
 ### Формы, валидация
-Для форм использован React Hook Form - email проверяется по регулярному выражению, почтовый код на наличие только цифр, остальные поля обязательны к заполнению
+Для форм использован React Hook Form - email проверяется по регулярному выражению, почтовый код на наличие только цифр, остальные поля обязательны к заполнению.
 <img src="https://github.com/Dirk19991/figmaStore/assets/104031523/36aeb11b-dd57-4085-afa5-ea30c8fde4e3" alt="Alt text" title="Optional title" width=70% height=60%>
 
 
