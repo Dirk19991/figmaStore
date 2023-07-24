@@ -1,86 +1,35 @@
-# Example app with styled-components
+## Интернет-магазин Figma Store
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+Магазин по образцу https://store-uk.figma.com/ с анимациями, кастомным свайпером и базой данных. Мне очень понравился магазин Figma тем, что он непохож на типичные скучные интернет-магазины, поэтому попробовать сделать такой же магазин с нуля было интересно, сложно и полезно.
 
-This example uses the Rust-based [SWC](https://nextjs.org/docs/advanced-features/compiler#styled-components) in Next.js for better performance than Babel.
+## Стек
 
-Currently, only the `ssr` and `displayName` transforms have been implemented. These two transforms are the main requirement for using `styled-components` in Next.js.
+[![My Skills](https://skillicons.dev/icons?i=nextjs,ts,mongodb)](https://skillicons.dev)
 
-## Deploy your own
+## Полное описание
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+### Фреймворк
+Проект сделан на NextJS. Посколько в магазине ограниченное количество товаров и их характеристики по идее не должны часто меняться, для проекта я выбрал SSG - благодаря этому страницы на сайте грузятся практически мгновенно.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+### База данных
+Для получения всех товаров и сохранения отправленных товаров используется MongoDB.
 
-## How to use
+### Управление состоянием
+В последнее время я предпочитаю пользоваться React Context в тех случаях, когда это возможно. Здесь мне потребовалось всего два контекста - для состояния корзины и для страны пользователя (США или Великобритания). Состояние корзины дополнительно сохраняется в Local storage. Остальное состояние определено локально для каждого компонента.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+### Свайпер
+В свайпере используются SVG разной формы, внутрь которых помещены картинки.
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-```
+### Выбор страны
+В проекте можно выбрать страну назначения - в зависимости от этого меняется валюта (фунты-доллары) и цены, а также подсказки в форме заказа (штаты для США и графства для Великобритании)
+<img src="https://github.com/Dirk19991/figmaStore/assets/104031523/aa514c85-071c-463f-852f-a1a547eb9ef2" alt="Alt text" title="Optional title" width=60% height=60%>
+<img src="https://github.com/Dirk19991/figmaStore/assets/104031523/66c31fb3-35a5-42b3-8f23-4f50822e6fd0" alt="Alt text" title="Optional title" width=60% height=60%>
 
-```bash
-yarn create next-app --example with-styled-components with-styled-components-app
-```
+### Формы, валидация
+Для форм использован React Hook Form - email проверяется по регулярному выражению, почтовый код на наличие только цифр, остальные поля обязательны к заполнению
+<img src="https://github.com/Dirk19991/figmaStore/assets/104031523/36aeb11b-dd57-4085-afa5-ea30c8fde4e3" alt="Alt text" title="Optional title" width=70% height=60%>
 
-```bash
-pnpm create next-app --example with-styled-components with-styled-components-app
-```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-### Try it on CodeSandbox
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
 
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
-
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
