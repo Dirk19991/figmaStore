@@ -88,6 +88,7 @@ const CheckoutForm = () => {
 
         <div className={styles.header}>Shipping address</div>
         <select
+          defaultValue={country}
           {...register('country', {
             required: true,
           })}
@@ -98,7 +99,9 @@ const CheckoutForm = () => {
           data-cy='country'
         >
           {COUNTRIES.map((elem) => (
-            <option value={elem}>{VALUES[elem]}</option>
+            <option key={elem} value={elem}>
+              {VALUES[elem]}
+            </option>
           ))}
         </select>
         <select
@@ -111,9 +114,17 @@ const CheckoutForm = () => {
           data-cy='state'
         >
           {country === 'UNITED STATES' &&
-            USAStates.map((elem) => <option value={elem}>{elem}</option>)}
+            USAStates.map((elem) => (
+              <option key={elem} value={elem}>
+                {elem}
+              </option>
+            ))}
           {country === 'UNITED KINGDOM' &&
-            UKCounties.map((elem) => <option value={elem}>{elem}</option>)}
+            UKCounties.map((elem) => (
+              <option key={elem} value={elem}>
+                {elem}
+              </option>
+            ))}
         </select>
         <div className={cn(styles.name, styles.bottom20)}>
           <div className={cn(styles.inputWrapper, styles.nameWrapper)}>
